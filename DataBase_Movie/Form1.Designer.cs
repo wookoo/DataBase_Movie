@@ -33,11 +33,15 @@ namespace DataBase_Movie
             this.loginBtn = new System.Windows.Forms.Button();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.idTextBox = new System.Windows.Forms.TextBox();
+            this.registerBtn = new System.Windows.Forms.Button();
+            this.findPasswordBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.findPasswordBtn);
+            this.panel1.Controls.Add(this.registerBtn);
             this.panel1.Controls.Add(this.loginBtn);
             this.panel1.Controls.Add(this.passwordTextBox);
             this.panel1.Controls.Add(this.idTextBox);
@@ -70,6 +74,27 @@ namespace DataBase_Movie
             this.idTextBox.Size = new System.Drawing.Size(199, 21);
             this.idTextBox.TabIndex = 0;
             // 
+            // registerBtn
+            // 
+            this.registerBtn.Location = new System.Drawing.Point(50, 161);
+            this.registerBtn.Name = "registerBtn";
+            this.registerBtn.Size = new System.Drawing.Size(103, 33);
+            this.registerBtn.TabIndex = 3;
+            this.registerBtn.Text = "회원가입";
+            this.registerBtn.UseVisualStyleBackColor = true;
+            this.registerBtn.Click += new System.EventHandler(this.registerBTN_Click);
+            // 
+            // findPasswordBtn
+            // 
+            this.findPasswordBtn.Location = new System.Drawing.Point(160, 161);
+            this.findPasswordBtn.Name = "findPasswordBtn";
+            this.findPasswordBtn.Size = new System.Drawing.Size(88, 32);
+            this.findPasswordBtn.TabIndex = 4;
+            this.findPasswordBtn.Text = "비밀번호찾기";
+            this.findPasswordBtn.UseVisualStyleBackColor = true;
+            this.findPasswordBtn.Click += new System.EventHandler(this.changeBTN_Click);
+   
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -91,6 +116,8 @@ namespace DataBase_Movie
         private System.Windows.Forms.Button loginBtn;
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.TextBox idTextBox;
+        private System.Windows.Forms.Button findPasswordBtn;
+        private System.Windows.Forms.Button registerBtn;
     }
 }
 

@@ -33,5 +33,15 @@ namespace DataBase_Movie
 
             Console.WriteLine("로그인 버튼 눌림" + id + "djawnstlr");
         }
+        private void registerBTN_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("Register Button Pressed");
+            FormRegister f = new FormRegister();
+            f.ShowDialog();
+        }
+        private void changeBTN_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("change button pressed");
+        }
     }
 }
