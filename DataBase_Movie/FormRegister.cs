@@ -48,7 +48,8 @@ namespace DataBase_Movie
             {
                 //이메일 정규식 확인
                 String email = eMailBox.Text.Trim();
-                bool valid = Regex.IsMatch(email, @"[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?");
+                bool valid = Regex.IsMatch(email, @"[a-zA-Z0-9!#$%&'*+/s=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?");
+                //valid = true;
                 if (!valid)
                 {
                     MessageBox.Show("올바른 이메일을 입력해주세요!");
@@ -58,35 +59,38 @@ namespace DataBase_Movie
                // {
                     MailMessage mail = new MailMessage();
                     Console.WriteLine("start");
-                    mail.From = new MailAddress("nanayagoon@naver.com", "DohyunMovie", System.Text.Encoding.UTF8);
+                String now = DateTime.Now.ToString("MM월dd일HH시mm분ss초");
+
+                mail.From = new MailAddress("nanayagoon@naver.com", "DohyunMovie", System.Text.Encoding.UTF8);
                     mail.To.Add(email);
                     Random generator = new Random();
                     String r = generator.Next(0, 999999).ToString("D6");
                     code = r;
-                    mail.Subject = $"도현 무비 인증번호는 [{r}] 입니다.";
-                    mail.Body = $"도현 무비 인증번호는 [{r}] 입니다.";
                     mail.SubjectEncoding = System.Text.Encoding.UTF8;
                     mail.BodyEncoding = System.Text.Encoding.UTF8;
-                    Console.WriteLine(mail.Subject);
-                    
+                    mail.Subject = $"도현 무비 인증번호는 [{r}] 입니다. 전송시각 : " + now;
+                mail.Body = mail.Subject;
 
 
 
-                    SmtpClient smtpServer = new SmtpClient("smtp.naver.com", 587);
 
-                    smtpServer.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
-                    smtpServer.Credentials = new System.Net.NetworkCredential("id", "pw");
-                    smtpServer.EnableSsl = true;
-                    smtpServer.UseDefaultCredentials = false;
-                    smtpServer.Send(mail);
-                    MessageBox.Show("이메일이 전송되었습니다!");
+
+
+                SmtpClient smtpServer = new SmtpClient("smtp.naver.com", 587);
+
+                smtpServer.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
+                smtpServer.Credentials = new System.Net.NetworkCredential("id", "pw");
+                smtpServer.EnableSsl = true;
+                smtpServer.Send(mail);
+                MessageBox.Show("이메일이 전송되었습니다!");
                     this.send_auth_mail.Text = "인증확인";
 
 
                     //전송이 잘 된다면 해당 작업 수행
                     this.authCodeBox.Enabled = true;
                     this.authCodeBox.ReadOnly = false;
-                    process = 1;
+                this.eMailBox.Enabled = false;
+                process = 1;
                     return;
 
 
@@ -110,6 +114,8 @@ namespace DataBase_Movie
                     this.authCodeBox.Enabled = false;
                     this.send_auth_mail.Text = "인증완료";
                     this.send_auth_mail.Enabled = false;
+                    
+                    MessageBox.Show("인증되었습니다!");
                     process = 2;
                 }
                 else
