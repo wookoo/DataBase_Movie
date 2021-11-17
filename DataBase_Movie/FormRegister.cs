@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Mail;
+using System.Text.RegularExpressions;
+
 
 namespace DataBase_Movie
 {
@@ -45,38 +47,57 @@ namespace DataBase_Movie
             if (process == 0)
             {
                 //이메일 정규식 확인
-                MessageBox.Show("이메일이 전송되었습니다!");
-                return;
-                MailMessage mail = new MailMessage();
-                Console.WriteLine("start");
-                mail.From = new MailAddress("nanayagoon@naver.com", "DohyunMovie", System.Text.Encoding.UTF8);
-                mail.To.Add("nanayagoon@daum.net");
-                Random generator = new Random();
-                String r = generator.Next(0, 999999).ToString("D6");
-                code = r;
-                mail.Subject = $"도현 무비 인증번호는 [{r}] 입니다.";
-                mail.Body = $"도현 무비 인증번호는 [{r}] 입니다.";
-                mail.SubjectEncoding = System.Text.Encoding.UTF8;
-                mail.BodyEncoding = System.Text.Encoding.UTF8;
-                Console.WriteLine(mail.Subject);
-                this.send_auth_mail.Text = "인증확인";
+                String email = eMailBox.Text.Trim();
+                bool valid = Regex.IsMatch(email, @"[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?");
+                if (!valid)
+                {
+                    MessageBox.Show("올바른 이메일을 입력해주세요!");
+                    return;
+                }
+                //try
+               // {
+                    MailMessage mail = new MailMessage();
+                    Console.WriteLine("start");
+                    mail.From = new MailAddress("nanayagoon@naver.com", "DohyunMovie", System.Text.Encoding.UTF8);
+                    mail.To.Add(email);
+                    Random generator = new Random();
+                    String r = generator.Next(0, 999999).ToString("D6");
+                    code = r;
+                    mail.Subject = $"도현 무비 인증번호는 [{r}] 입니다.";
+                    mail.Body = $"도현 무비 인증번호는 [{r}] 입니다.";
+                    mail.SubjectEncoding = System.Text.Encoding.UTF8;
+                    mail.BodyEncoding = System.Text.Encoding.UTF8;
+                    Console.WriteLine(mail.Subject);
+                    
 
 
-                //전송이 잘 된다면 해당 작업 수행
-                this.authCodeBox.Enabled = true;
-                this.authCodeBox.ReadOnly = false;
-                process = 1;
-                return;
+
+                    SmtpClient smtpServer = new SmtpClient("smtp.naver.com", 587);
+
+                    smtpServer.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
+                    smtpServer.Credentials = new System.Net.NetworkCredential("id", "pw");
+                    smtpServer.EnableSsl = true;
+                    smtpServer.UseDefaultCredentials = false;
+                    smtpServer.Send(mail);
+                    MessageBox.Show("이메일이 전송되었습니다!");
+                    this.send_auth_mail.Text = "인증확인";
 
 
+                    //전송이 잘 된다면 해당 작업 수행
+                    this.authCodeBox.Enabled = true;
+                    this.authCodeBox.ReadOnly = false;
+                    process = 1;
+                    return;
 
-                SmtpClient smtpServer = new SmtpClient("smtp.naver.com", 587);
 
-                smtpServer.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
-                smtpServer.Credentials = new System.Net.NetworkCredential("네이버 아이디", "비밀번호");
-                smtpServer.EnableSsl = true;
-                smtpServer.Send(mail);
-                Console.WriteLine("end");
+                //}
+                //catch (Exception)
+               // {
+                 //   MessageBox.Show("이메일이 전송에 실패하였습니다.");
+                //}
+                
+               
+               
 
             }
             else if(process == 1)
