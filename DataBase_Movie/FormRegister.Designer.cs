@@ -30,6 +30,7 @@ namespace DataBase_Movie
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,9 +39,8 @@ namespace DataBase_Movie
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.authCodeBox = new System.Windows.Forms.TextBox();
+            this.eMailBox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,12 +55,22 @@ namespace DataBase_Movie
             this.panel1.Controls.Add(this.textBox5);
             this.panel1.Controls.Add(this.textBox4);
             this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.authCodeBox);
+            this.panel1.Controls.Add(this.eMailBox);
             this.panel1.Location = new System.Drawing.Point(103, 62);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(371, 260);
             this.panel1.TabIndex = 0;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(51, 178);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 12);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "카드번호";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label4
             // 
@@ -87,7 +97,7 @@ namespace DataBase_Movie
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 12);
             this.label2.TabIndex = 7;
-            this.label2.Text = "비밀번호";
+            this.label2.Text = "인증번호";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
@@ -131,35 +141,29 @@ namespace DataBase_Movie
             this.textBox3.Size = new System.Drawing.Size(111, 21);
             this.textBox3.TabIndex = 2;
             // 
-            // textBox2
+            // authCodeBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(110, 56);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(111, 21);
-            this.textBox2.TabIndex = 1;
+            this.authCodeBox.CausesValidation = false;
+            this.authCodeBox.Enabled = false;
+            this.authCodeBox.Location = new System.Drawing.Point(110, 56);
+            this.authCodeBox.Name = "authCodeBox";
+            this.authCodeBox.ReadOnly = true;
+            this.authCodeBox.Size = new System.Drawing.Size(111, 21);
+            this.authCodeBox.TabIndex = 11;
             // 
-            // textBox1
+            // eMailBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(110, 18);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(111, 21);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(51, 178);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 12);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "카드번호";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.eMailBox.Location = new System.Drawing.Point(110, 18);
+            this.eMailBox.Name = "eMailBox";
+            this.eMailBox.Size = new System.Drawing.Size(111, 21);
+            this.eMailBox.TabIndex = 0;
+            this.eMailBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // FormRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
             this.Name = "FormRegister";
@@ -176,8 +180,8 @@ namespace DataBase_Movie
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox authCodeBox;
+        private System.Windows.Forms.TextBox eMailBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button send_auth_mail;
         private System.Windows.Forms.Label label4;
