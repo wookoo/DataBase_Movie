@@ -16,5 +16,22 @@ namespace DataBase_Movie
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private void loginBTN_Click(object sender, EventArgs e)
+        {
+            String id = idTextBox.Text;
+            String passwd = passwordTextBox.Text;
+            id = id.Trim();
+
+
+            Console.WriteLine("로그인 버튼 눌림" + id + "djawnstlr");
+        }
     }
 }

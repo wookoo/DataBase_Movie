@@ -1,0 +1,10 @@
+C:\Users\dohyun\source\repos\DataBase_Movie\DataBase_Movie\bin\Debug\DataBase_Movie.exe.config
+C:\Users\dohyun\source\repos\DataBase_Movie\DataBase_Movie\bin\Debug\DataBase_Movie.exe
+C:\Users\dohyun\source\repos\DataBase_Movie\DataBase_Movie\bin\Debug\DataBase_Movie.pdb
+C:\Users\dohyun\source\repos\DataBase_Movie\DataBase_Movie\obj\Debug\DataBase_Movie.csprojAssemblyReference.cache
+C:\Users\dohyun\source\repos\DataBase_Movie\DataBase_Movie\obj\Debug\DataBase_Movie.Form1.resources
+C:\Users\dohyun\source\repos\DataBase_Movie\DataBase_Movie\obj\Debug\DataBase_Movie.Properties.Resources.resources
+C:\Users\dohyun\source\repos\DataBase_Movie\DataBase_Movie\obj\Debug\DataBase_Movie.csproj.GenerateResource.cache
+C:\Users\dohyun\source\repos\DataBase_Movie\DataBase_Movie\obj\Debug\DataBase_Movie.csproj.CoreCompileInputs.cache
+C:\Users\dohyun\source\repos\DataBase_Movie\DataBase_Movie\obj\Debug\DataBase_Movie.exe
+C:\Users\dohyun\source\repos\DataBase_Movie\DataBase_Movie\obj\Debug\DataBase_Movie.pdb
