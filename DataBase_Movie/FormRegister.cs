@@ -303,11 +303,36 @@ namespace DataBase_Movie
                 Console.WriteLine(query);
                 //이름 휴대전화 등급 카드번호
 
-                try
-                {
+                //d
+                //여기에 회원가입 되어있나 확인
+
+               // try
+                //{
                     conn = new OleDbConnection(connectionString);
                     conn.Open();
                     OleDbCommand cmd = new OleDbCommand();
+                    
+                    cmd.CommandText = $"select * from 회원 where 이름='{name}' and 전화번호='{phone}'";
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Connection = conn;
+
+                    OleDbDataReader read = cmd.ExecuteReader();
+
+                    if (read.Read())
+                    {
+                        MessageBox.Show("이미 가입된 회원입니다! 계정찾기를 이용해주세요!", "회원 가입불가");
+                        if (conn != null)
+                        {
+                            conn.Close(); //데이터베이스 연결 해제
+                        }
+                    read.Close();
+                        return;
+                    }
+                conn.Close();
+                    conn = new OleDbConnection(connectionString);
+                    conn.Open();
+                    
+
                     cmd.CommandText = query;
                     cmd.CommandType = CommandType.Text;
                     cmd.Connection = conn;
@@ -316,13 +341,20 @@ namespace DataBase_Movie
                     conn.Close(); //데이터베이스 연결 해제
                     MessageBox.Show("회원가입되었습니다.", "회원가입 성공");
                     Close();
-                }
-                catch
-                {
-                    MessageBox.Show("알수없는 오류로 회원가입에 실패했습니다", "회원가입 실패");
-                }
-                
 
+              //  }
+               // catch (Exception as e)
+                //{
+                 //   MessageBox.Show("알수없는 오류로 회원가입에 실패했습니다", "회원가입 실패");
+               // }
+
+                //finally
+                //{
+                  //  if(conn != null)
+                    //{
+                      //  conn.Close();
+                    //}
+              //  }
                 
 
 
