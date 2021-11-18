@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Mail;
 using System.Text.RegularExpressions;
+using System.Data.OleDb;
 
 
 namespace DataBase_Movie
@@ -17,6 +18,8 @@ namespace DataBase_Movie
     {
         int process = 0;
         String code = "";
+        OleDbConnection conn;
+        string connectionString = "Provider=MSDAORA;Password=dohyun;User ID=dohyun"; //oracle 서버 연결
         public FormRegister()
         {
             InitializeComponent();
@@ -42,19 +45,46 @@ namespace DataBase_Movie
 
         }
 
+        private void only_digit_Event(object sender, KeyPressEventArgs e)
+        {
+            // 숫자와 백스페이스만 입력가능
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back)))
+            {
+                e.Handled = true;
+            }
+        }
+
         private void send_auth_btn_Click(object sender, EventArgs e)
         {
             if (process == 0)
             {
+
                 //이메일 정규식 확인
                 String email = eMailBox.Text.Trim();
                 bool valid = Regex.IsMatch(email, @"[a-zA-Z0-9!#$%&'*+/s=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?");
                 //valid = true;
+                
+
+     
                 if (!valid)
                 {
                     MessageBox.Show("올바른 이메일을 입력해주세요!");
                     return;
                 }
+                conn = new OleDbConnection(connectionString);
+                conn.Open();
+                OleDbCommand cmd = new OleDbCommand();
+                cmd.CommandText = "select * from 회원 where 아이디 = '" + email + "'";
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection = conn;
+
+                OleDbDataReader read = cmd.ExecuteReader();
+                if (read.Read())
+                {
+                    MessageBox.Show("이미 사용중인 이메일입니다!","이메일 사용불가");
+                    return;
+                }
+              
                 //try
                // {
                     MailMessage mail = new MailMessage();
@@ -77,12 +107,21 @@ namespace DataBase_Movie
 
 
                 SmtpClient smtpServer = new SmtpClient("smtp.naver.com", 587);
+                string path = @"d:\IDPW.txt";
 
+                // text file 의 전체 text 를 읽어 옵니다.
+                string textValue = System.IO.File.ReadAllText(path);
+
+                string[] MAIL_SENDER_IDPW = textValue.Split('/');
+                string MAIL_SENDER_ID = MAIL_SENDER_IDPW[0].Trim();
+                string MAIL_SENDER_PW = MAIL_SENDER_IDPW[1].Trim();
+                Console.WriteLine(MAIL_SENDER_ID);
+                Console.WriteLine(MAIL_SENDER_PW);
                 smtpServer.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
-                smtpServer.Credentials = new System.Net.NetworkCredential("id", "pw");
+                smtpServer.Credentials = new System.Net.NetworkCredential(MAIL_SENDER_ID, MAIL_SENDER_PW);
                 smtpServer.EnableSsl = true;
                 smtpServer.Send(mail);
-                MessageBox.Show("이메일이 전송되었습니다!");
+                MessageBox.Show("이메일이 전송되었습니다!","메일전송 성공");
                     this.send_auth_mail.Text = "인증확인";
 
 
@@ -126,5 +165,58 @@ namespace DataBase_Movie
             }
 
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cancel_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("정말로 회원가입을 취소할까요?", "회원가입 취소", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Close();
+            }
+      
+        }
+
+        private void cardBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cardDrop_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void register_btn_Click(Object sender, EventArgs e)
+        {
+            if (MessageBox.Show("정말로 회원가입을 할까요?", "회원가입", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+               //여기서 검사 실행
+               if(process != 2)
+                {
+                    MessageBox.Show("이메일 인증을 해주세요", "회원가입 실패");
+                    return;
+                }
+            }
+        }
+        //private void 
     }
 }
