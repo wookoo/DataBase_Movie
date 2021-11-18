@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Net.Mail;
 using System.Text.RegularExpressions;
 using System.Data.OleDb;
+using System.Security.Cryptography;
 
 
 namespace DataBase_Movie
@@ -79,10 +80,23 @@ namespace DataBase_Movie
                 cmd.Connection = conn;
 
                 OleDbDataReader read = cmd.ExecuteReader();
+                
                 if (read.Read())
                 {
                     MessageBox.Show("이미 사용중인 이메일입니다!","이메일 사용불가");
+                    if(conn != null)
+                    {
+                        conn.Close(); //데이터베이스 연결 해제
+                    }
                     return;
+                }
+                try
+                {
+                    conn.Close(); //데이터베이스 연결 해제
+                }
+                catch
+                {
+
                 }
               
                 //try
@@ -207,14 +221,117 @@ namespace DataBase_Movie
 
         private void register_btn_Click(Object sender, EventArgs e)
         {
+  
+
             if (MessageBox.Show("정말로 회원가입을 할까요?", "회원가입", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-               //여기서 검사 실행
-               if(process != 2)
+                //여기서 검사 실행
+                if(process != 2)
+                 {
+                     MessageBox.Show("이메일 인증을 해주세요", "회원가입 실패");
+                     return;
+                 }
+
+                String passWord = passwordBox.Text;
+                String repassWord = rePasswordBox.Text;
+                if(passWord != repassWord)
                 {
-                    MessageBox.Show("이메일 인증을 해주세요", "회원가입 실패");
+                    MessageBox.Show("두 비밀번호가 일치하지 않습니다.", "회원가입 실패");
                     return;
                 }
+
+                String regExpPw = @"(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[^\w\s]).{8,}";
+                bool valid = Regex.IsMatch(passWord, regExpPw);
+
+                
+                if (!valid )
+                {
+                    MessageBox.Show("비밀번호는 숫자, 특수문자, 영문 각 1회 이상 " +
+                        "사용하여 8자리 이상으로 설정해주세요",
+                        "회원가입 실패");
+                    return;
+                }
+
+                String regName = @"^[가-힣]{2,4}";
+                String name = nameBox.Text.Trim();
+
+                valid = Regex.IsMatch(name, regName);
+                if (!valid)
+                {
+                    MessageBox.Show("정확한 이름을 입력해주세요", "회원가입 실패");
+                    return;
+                }
+
+                String regExpPhone = @"\d{2,3}-\d{3,4}-\d{4}";
+                String phone = phoneDrop.Text.Trim() +"-"+ phoneMiddleBox.Text.Trim() + "-" + phoneLastBox.Text.Trim();
+                valid = Regex.IsMatch(phone, regExpPhone);
+       
+                if (!valid)
+                {
+                    MessageBox.Show("올바른전화번호를 입력해주세요",
+                        "회원가입 실패");
+                    return;
+                }
+           
+                String regExpCard = @"\d{4}-\d{4}-\d{4}-\d{4}";
+                String card = $"{CardFirstBox.Text.Trim()}-{CardSecondBox.Text.Trim()}-" +
+                    $"{CardThirdBox.Text.Trim()}-{CardFourthBox.Text.Trim()}";
+                valid = Regex.IsMatch(card, regExpCard);
+                if (!valid)
+                {
+                    MessageBox.Show("올바른카드번호를 입력해주세요",
+                        "회원가입 실패");
+                    return;
+                }
+
+                card = cardDrop.Text.Trim() +" " + card;
+
+          
+
+                SHA256 hash1 = new SHA256Managed();
+                byte[] bytes1 = hash1.ComputeHash(Encoding.ASCII.GetBytes(passWord));
+
+                // 16진수 형태로 문자열 결합
+                StringBuilder sb1 = new StringBuilder();
+                foreach (byte b1 in bytes1)
+                    sb1.AppendFormat("{0:x2}", b1);
+
+                // 입력값의 해시결과
+                String crypted_pw = sb1.ToString();
+                String email = eMailBox.Text.Trim();
+                String query = $"insert into 회원 values ('{email}','{crypted_pw}','{name}','{phone}','SILVER','{card}')";
+                Console.WriteLine(query);
+                //이름 휴대전화 등급 카드번호
+
+                try
+                {
+                    conn = new OleDbConnection(connectionString);
+                    conn.Open();
+                    OleDbCommand cmd = new OleDbCommand();
+                    cmd.CommandText = query;
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Connection = conn;
+
+                    cmd.ExecuteNonQuery();
+                    conn.Close(); //데이터베이스 연결 해제
+                    MessageBox.Show("회원가입되었습니다.", "회원가입 성공");
+                    Close();
+                }
+                catch
+                {
+                    MessageBox.Show("알수없는 오류로 회원가입에 실패했습니다", "회원가입 실패");
+                }
+                
+
+                
+
+
+
+
+
+
+
+
             }
         }
         //private void 
