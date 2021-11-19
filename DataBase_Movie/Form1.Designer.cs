@@ -30,7 +30,7 @@ namespace DataBase_Movie
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.findIDBtn = new System.Windows.Forms.Button();
+            this.findAccountBtn = new System.Windows.Forms.Button();
             this.findPasswordBtn = new System.Windows.Forms.Button();
             this.registerBtn = new System.Windows.Forms.Button();
             this.loginBtn = new System.Windows.Forms.Button();
@@ -41,7 +41,7 @@ namespace DataBase_Movie
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.findIDBtn);
+            this.panel1.Controls.Add(this.findAccountBtn);
             this.panel1.Controls.Add(this.findPasswordBtn);
             this.panel1.Controls.Add(this.registerBtn);
             this.panel1.Controls.Add(this.loginBtn);
@@ -52,14 +52,15 @@ namespace DataBase_Movie
             this.panel1.Size = new System.Drawing.Size(497, 303);
             this.panel1.TabIndex = 0;
             // 
-            // findIDBtn
+            // findAccountBtn
             // 
-            this.findIDBtn.Location = new System.Drawing.Point(126, 171);
-            this.findIDBtn.Name = "findIDBtn";
-            this.findIDBtn.Size = new System.Drawing.Size(86, 33);
-            this.findIDBtn.TabIndex = 5;
-            this.findIDBtn.Text = "아이디찾기";
-            this.findIDBtn.UseVisualStyleBackColor = true;
+            this.findAccountBtn.Location = new System.Drawing.Point(126, 171);
+            this.findAccountBtn.Name = "findAccountBtn";
+            this.findAccountBtn.Size = new System.Drawing.Size(86, 33);
+            this.findAccountBtn.TabIndex = 5;
+            this.findAccountBtn.Text = "계정찾기";
+            this.findAccountBtn.UseVisualStyleBackColor = true;
+            this.findAccountBtn.Click += new System.EventHandler(this.findAccountBTN_Click);
             // 
             // findPasswordBtn
             // 
@@ -129,7 +130,7 @@ namespace DataBase_Movie
         private System.Windows.Forms.TextBox idTextBox;
         private System.Windows.Forms.Button findPasswordBtn;
         private System.Windows.Forms.Button registerBtn;
-        private System.Windows.Forms.Button findIDBtn;
+        private System.Windows.Forms.Button findAccountBtn;
     }
 }
 

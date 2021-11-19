@@ -30,6 +30,8 @@ namespace DataBase_Movie
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.phoneLastBox = new System.Windows.Forms.TextBox();
+            this.phoneMiddleBox = new System.Windows.Forms.TextBox();
             this.phoneDrop = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.CardThirdBox = new System.Windows.Forms.TextBox();
@@ -51,8 +53,6 @@ namespace DataBase_Movie
             this.passwordBox = new System.Windows.Forms.TextBox();
             this.authCodeBox = new System.Windows.Forms.TextBox();
             this.eMailBox = new System.Windows.Forms.TextBox();
-            this.phoneMiddleBox = new System.Windows.Forms.TextBox();
-            this.phoneLastBox = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,6 +86,24 @@ namespace DataBase_Movie
             this.panel1.Size = new System.Drawing.Size(525, 352);
             this.panel1.TabIndex = 0;
             // 
+            // phoneLastBox
+            // 
+            this.phoneLastBox.Location = new System.Drawing.Point(245, 201);
+            this.phoneLastBox.MaxLength = 4;
+            this.phoneLastBox.Name = "phoneLastBox";
+            this.phoneLastBox.Size = new System.Drawing.Size(57, 21);
+            this.phoneLastBox.TabIndex = 24;
+            this.phoneLastBox.KeyPress += this.only_digit_Event;
+            // 
+            // phoneMiddleBox
+            // 
+            this.phoneMiddleBox.Location = new System.Drawing.Point(182, 201);
+            this.phoneMiddleBox.MaxLength = 4;
+            this.phoneMiddleBox.Name = "phoneMiddleBox";
+            this.phoneMiddleBox.Size = new System.Drawing.Size(57, 21);
+            this.phoneMiddleBox.TabIndex = 23;
+            this.phoneMiddleBox.KeyPress += this.only_digit_Event;
+            // 
             // phoneDrop
             // 
             this.phoneDrop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -103,9 +121,9 @@ namespace DataBase_Movie
             "063"});
             this.phoneDrop.Location = new System.Drawing.Point(109, 202);
             this.phoneDrop.Name = "phoneDrop";
-            this.phoneDrop.SelectedIndex = 0;
             this.phoneDrop.Size = new System.Drawing.Size(67, 20);
             this.phoneDrop.TabIndex = 22;
+            this.phoneDrop.SelectedIndex = 0;
             this.phoneDrop.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // label7
@@ -121,29 +139,29 @@ namespace DataBase_Movie
             // CardThirdBox
             // 
             this.CardThirdBox.Location = new System.Drawing.Point(308, 232);
+            this.CardThirdBox.MaxLength = 4;
             this.CardThirdBox.Name = "CardThirdBox";
             this.CardThirdBox.Size = new System.Drawing.Size(57, 21);
             this.CardThirdBox.TabIndex = 19;
             this.CardThirdBox.KeyPress += this.only_digit_Event;
-            this.CardThirdBox.MaxLength = 4;
             // 
             // CardSecondBox
             // 
             this.CardSecondBox.Location = new System.Drawing.Point(245, 233);
+            this.CardSecondBox.MaxLength = 4;
             this.CardSecondBox.Name = "CardSecondBox";
             this.CardSecondBox.Size = new System.Drawing.Size(57, 21);
             this.CardSecondBox.TabIndex = 18;
             this.CardSecondBox.KeyPress += this.only_digit_Event;
-            this.CardSecondBox.MaxLength = 4;
             // 
             // CardFirstBox
             // 
             this.CardFirstBox.Location = new System.Drawing.Point(182, 233);
+            this.CardFirstBox.MaxLength = 4;
             this.CardFirstBox.Name = "CardFirstBox";
             this.CardFirstBox.Size = new System.Drawing.Size(57, 21);
             this.CardFirstBox.TabIndex = 17;
             this.CardFirstBox.KeyPress += this.only_digit_Event;
-            this.CardFirstBox.MaxLength = 4;
             // 
             // cardDrop
             // 
@@ -161,9 +179,9 @@ namespace DataBase_Movie
             "카카오"});
             this.cardDrop.Location = new System.Drawing.Point(109, 233);
             this.cardDrop.Name = "cardDrop";
-            this.cardDrop.SelectedIndex = 0;
             this.cardDrop.Size = new System.Drawing.Size(67, 20);
             this.cardDrop.TabIndex = 16;
+            this.cardDrop.SelectedIndex = 0;
             this.cardDrop.SelectedIndexChanged += new System.EventHandler(this.cardDrop_SelectedIndexChanged);
             // 
             // cancelBtn
@@ -199,12 +217,12 @@ namespace DataBase_Movie
             // CardFourthBox
             // 
             this.CardFourthBox.Location = new System.Drawing.Point(371, 231);
+            this.CardFourthBox.MaxLength = 4;
             this.CardFourthBox.Name = "CardFourthBox";
             this.CardFourthBox.Size = new System.Drawing.Size(57, 21);
             this.CardFourthBox.TabIndex = 12;
             this.CardFourthBox.TextChanged += new System.EventHandler(this.cardBox_TextChanged);
             this.CardFourthBox.KeyPress += this.only_digit_Event;
-            this.CardFourthBox.MaxLength = 4;
             // 
             // label5
             // 
@@ -301,6 +319,7 @@ namespace DataBase_Movie
             this.authCodeBox.ReadOnly = true;
             this.authCodeBox.Size = new System.Drawing.Size(149, 21);
             this.authCodeBox.TabIndex = 11;
+            this.authCodeBox.KeyPress += this.only_digit_Event;
             // 
             // eMailBox
             // 
@@ -310,24 +329,6 @@ namespace DataBase_Movie
             this.eMailBox.Size = new System.Drawing.Size(246, 21);
             this.eMailBox.TabIndex = 0;
             this.eMailBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // phoneMiddleBox
-            // 
-            this.phoneMiddleBox.Location = new System.Drawing.Point(182, 201);
-            this.phoneMiddleBox.Name = "phoneMiddleBox";
-            this.phoneMiddleBox.Size = new System.Drawing.Size(57, 21);
-            this.phoneMiddleBox.TabIndex = 23;
-            this.phoneMiddleBox.KeyPress += this.only_digit_Event;
-            this.phoneMiddleBox.MaxLength = 4;
-            // 
-            // phoneLastBox
-            // 
-            this.phoneLastBox.Location = new System.Drawing.Point(245, 201);
-            this.phoneLastBox.Name = "phoneLastBox";
-            this.phoneLastBox.Size = new System.Drawing.Size(57, 21);
-            this.phoneLastBox.TabIndex = 24;
-            this.phoneLastBox.KeyPress += this.only_digit_Event;
-            this.phoneLastBox.MaxLength = 4;
             // 
             // FormRegister
             // 

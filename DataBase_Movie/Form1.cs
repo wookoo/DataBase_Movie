@@ -54,7 +54,8 @@ namespace DataBase_Movie
 
         private void findAccountBTN_Click(object sender, EventArgs e)
         {
-
+            FormFindAccount f = new FormFindAccount();
+            f.ShowDialog();
         }
 
         private void passwordTextBox_TextChanged(object sender, EventArgs e)
