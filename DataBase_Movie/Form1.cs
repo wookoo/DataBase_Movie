@@ -43,5 +43,23 @@ namespace DataBase_Movie
         {
             Console.WriteLine("change button pressed");
         }
+
+        private void findPassBTN_Click(object sender, EventArgs e)
+        {
+            FormFindPassword f = new FormFindPassword();
+            f.ShowDialog();
+
+
+        }
+
+        private void findAccountBTN_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void passwordTextBox_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

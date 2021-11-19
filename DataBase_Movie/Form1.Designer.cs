@@ -30,31 +30,62 @@ namespace DataBase_Movie
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.findIDBtn = new System.Windows.Forms.Button();
+            this.findPasswordBtn = new System.Windows.Forms.Button();
+            this.registerBtn = new System.Windows.Forms.Button();
             this.loginBtn = new System.Windows.Forms.Button();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.idTextBox = new System.Windows.Forms.TextBox();
-            this.registerBtn = new System.Windows.Forms.Button();
-            this.findPasswordBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.findIDBtn);
             this.panel1.Controls.Add(this.findPasswordBtn);
             this.panel1.Controls.Add(this.registerBtn);
             this.panel1.Controls.Add(this.loginBtn);
             this.panel1.Controls.Add(this.passwordTextBox);
             this.panel1.Controls.Add(this.idTextBox);
-            this.panel1.Location = new System.Drawing.Point(203, 84);
+            this.panel1.Location = new System.Drawing.Point(152, 78);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(311, 206);
+            this.panel1.Size = new System.Drawing.Size(497, 303);
             this.panel1.TabIndex = 0;
+            // 
+            // findIDBtn
+            // 
+            this.findIDBtn.Location = new System.Drawing.Point(126, 171);
+            this.findIDBtn.Name = "findIDBtn";
+            this.findIDBtn.Size = new System.Drawing.Size(86, 33);
+            this.findIDBtn.TabIndex = 5;
+            this.findIDBtn.Text = "아이디찾기";
+            this.findIDBtn.UseVisualStyleBackColor = true;
+            // 
+            // findPasswordBtn
+            // 
+            this.findPasswordBtn.Location = new System.Drawing.Point(237, 171);
+            this.findPasswordBtn.Name = "findPasswordBtn";
+            this.findPasswordBtn.Size = new System.Drawing.Size(88, 32);
+            this.findPasswordBtn.TabIndex = 4;
+            this.findPasswordBtn.Text = "비밀번호찾기";
+            this.findPasswordBtn.UseVisualStyleBackColor = true;
+            this.findPasswordBtn.Click += new System.EventHandler(this.findPassBTN_Click);
+            // 
+            // registerBtn
+            // 
+            this.registerBtn.Location = new System.Drawing.Point(126, 120);
+            this.registerBtn.Name = "registerBtn";
+            this.registerBtn.Size = new System.Drawing.Size(199, 33);
+            this.registerBtn.TabIndex = 3;
+            this.registerBtn.Text = "회원가입";
+            this.registerBtn.UseVisualStyleBackColor = true;
+            this.registerBtn.Click += new System.EventHandler(this.registerBTN_Click);
             // 
             // loginBtn
             // 
-            this.loginBtn.Location = new System.Drawing.Point(50, 122);
+            this.loginBtn.Location = new System.Drawing.Point(345, 54);
             this.loginBtn.Name = "loginBtn";
-            this.loginBtn.Size = new System.Drawing.Size(199, 33);
+            this.loginBtn.Size = new System.Drawing.Size(97, 64);
             this.loginBtn.TabIndex = 2;
             this.loginBtn.Text = "로그인";
             this.loginBtn.UseVisualStyleBackColor = true;
@@ -62,38 +93,18 @@ namespace DataBase_Movie
             // 
             // passwordTextBox
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(50, 77);
+            this.passwordTextBox.Location = new System.Drawing.Point(126, 93);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(199, 21);
             this.passwordTextBox.TabIndex = 1;
+            this.passwordTextBox.TextChanged += new System.EventHandler(this.passwordTextBox_TextChanged);
             // 
             // idTextBox
             // 
-            this.idTextBox.Location = new System.Drawing.Point(50, 34);
+            this.idTextBox.Location = new System.Drawing.Point(126, 54);
             this.idTextBox.Name = "idTextBox";
             this.idTextBox.Size = new System.Drawing.Size(199, 21);
             this.idTextBox.TabIndex = 0;
-            // 
-            // registerBtn
-            // 
-            this.registerBtn.Location = new System.Drawing.Point(50, 161);
-            this.registerBtn.Name = "registerBtn";
-            this.registerBtn.Size = new System.Drawing.Size(103, 33);
-            this.registerBtn.TabIndex = 3;
-            this.registerBtn.Text = "회원가입";
-            this.registerBtn.UseVisualStyleBackColor = true;
-            this.registerBtn.Click += new System.EventHandler(this.registerBTN_Click);
-            // 
-            // findPasswordBtn
-            // 
-            this.findPasswordBtn.Location = new System.Drawing.Point(160, 161);
-            this.findPasswordBtn.Name = "findPasswordBtn";
-            this.findPasswordBtn.Size = new System.Drawing.Size(88, 32);
-            this.findPasswordBtn.TabIndex = 4;
-            this.findPasswordBtn.Text = "비밀번호찾기";
-            this.findPasswordBtn.UseVisualStyleBackColor = true;
-            this.findPasswordBtn.Click += new System.EventHandler(this.changeBTN_Click);
-   
             // 
             // Form1
             // 
@@ -118,6 +129,7 @@ namespace DataBase_Movie
         private System.Windows.Forms.TextBox idTextBox;
         private System.Windows.Forms.Button findPasswordBtn;
         private System.Windows.Forms.Button registerBtn;
+        private System.Windows.Forms.Button findIDBtn;
     }
 }
 
