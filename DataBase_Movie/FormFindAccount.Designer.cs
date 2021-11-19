@@ -37,11 +37,13 @@ namespace DataBase_Movie
             this.nameBox = new System.Windows.Forms.TextBox();
             this.phoneDrop = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.cancelBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.cancelBtn);
             this.panel1.Controls.Add(this.findAccountBtn);
             this.panel1.Controls.Add(this.phoneLastBox);
             this.panel1.Controls.Add(this.label5);
@@ -88,6 +90,7 @@ namespace DataBase_Movie
             this.phoneMiddleBox.Name = "phoneMiddleBox";
             this.phoneMiddleBox.Size = new System.Drawing.Size(57, 21);
             this.phoneMiddleBox.TabIndex = 27;
+            
             // 
             // nameBox
             // 
@@ -114,7 +117,7 @@ namespace DataBase_Movie
             "063"});
             this.phoneDrop.Location = new System.Drawing.Point(84, 79);
             this.phoneDrop.Name = "phoneDrop";
-            this.phoneDrop.SelectedIndex = 0;
+            this.phoneDrop.SelectedIndex = 1;
             this.phoneDrop.Size = new System.Drawing.Size(67, 20);
             this.phoneDrop.TabIndex = 26;
             // 
@@ -126,6 +129,16 @@ namespace DataBase_Movie
             this.label7.Size = new System.Drawing.Size(53, 12);
             this.label7.TabIndex = 25;
             this.label7.Text = "전화번호";
+            // 
+            // cancelBtn
+            // 
+            this.cancelBtn.Location = new System.Drawing.Point(85, 151);
+            this.cancelBtn.Name = "cancelBtn";
+            this.cancelBtn.Size = new System.Drawing.Size(192, 18);
+            this.cancelBtn.TabIndex = 30;
+            this.cancelBtn.Text = "취소";
+            this.cancelBtn.UseVisualStyleBackColor = true;
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
             // FormFindAccount
             // 
@@ -151,5 +164,6 @@ namespace DataBase_Movie
         private System.Windows.Forms.ComboBox phoneDrop;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button findAccountBtn;
+        private System.Windows.Forms.Button cancelBtn;
     }
 }
