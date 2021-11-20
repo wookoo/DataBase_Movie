@@ -21,6 +21,17 @@ namespace DataBase_Movie
         public FormAdminManageAccount()
         {
             InitializeComponent();
+            GridViewRefresh();
+
+
+
+        }
+
+        private void GridViewRefresh()
+        {
+
+            dataGridView.DataSource = null;
+            dataGridView.Rows.Clear();
             conn = new OleDbConnection(connectionString);
             conn.Open();
             OleDbCommand cmd = new OleDbCommand();
@@ -49,10 +60,8 @@ namespace DataBase_Movie
 
                 dataGridView.Rows.Add(obj); //데이터그리드뷰에 오브젝트 배열 추가
             }
-
-
-
         }
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -86,6 +95,52 @@ namespace DataBase_Movie
 
                 FormAdminSendEmail f = new FormAdminSendEmail(EmailList);
                 f.ShowDialog();
+
+                //여기서 dataRefresh
+                Console.WriteLine("종료");
+                GridViewRefresh();
+
+            }
+        }
+
+        private void changeGradeBtn_Click(object sender, EventArgs e)
+        {
+            
+            int selectedCellCount =
+        dataGridView.GetCellCount(DataGridViewElementStates.Selected);
+            if (selectedCellCount == 0)
+            {
+                MessageBox.Show("등급을 수정할 사람들을 선택해주세요", "등급수정 불가");
+                return;
+            }
+            if (selectedCellCount > 0)
+            {
+                ArrayList EmailList = new ArrayList();
+                ArrayList GradeList = new ArrayList();
+
+                for (int i = 0; i < selectedCellCount; i++)
+                {
+
+                    int row = dataGridView.SelectedCells[i].RowIndex;
+                    String emil = dataGridView.Rows[row].Cells[0].Value.ToString();
+                    String grade = dataGridView.Rows[row].Cells[3].Value.ToString();
+                    if (EmailList.IndexOf(emil) == -1)
+                    {
+                        EmailList.Add(emil);
+                        GradeList.Add(grade);
+                    }
+
+
+                }
+                for (int i = 0; i < EmailList.Count; i++)
+                {
+                    Console.WriteLine((String)EmailList[i]);
+                }
+                FormAdminEditGrade f = new FormAdminEditGrade(EmailList,GradeList);
+                f.ShowDialog();
+
+                GridViewRefresh();
+
             }
         }
     }
