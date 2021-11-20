@@ -16,5 +16,11 @@ namespace DataBase_Movie
         {
             InitializeComponent();
         }
+
+        private void editAccount_Click(object sender, EventArgs e)
+        {
+            FormAdminManageAccount f = new FormAdminManageAccount();
+            f.ShowDialog();
+        }
     }
 }

@@ -11,3 +11,6 @@ C:\Users\dohyun\source\repos\DataBase_Movie\DataBase_Movie\obj\Debug\DataBase_Mo
 C:\Users\dohyun\source\repos\DataBase_Movie\DataBase_Movie\obj\Debug\DataBase_Movie.FormRegister.resources
 C:\Users\dohyun\source\repos\DataBase_Movie\DataBase_Movie\obj\Debug\DataBase_Movie.FormFindAccount.resources
 C:\Users\dohyun\source\repos\DataBase_Movie\DataBase_Movie\obj\Debug\DataBase_Movie.FormFindPassword.resources
+C:\Users\dohyun\source\repos\DataBase_Movie\DataBase_Movie\obj\Debug\DataBase_Movie.FormAdminMain.resources
+C:\Users\dohyun\source\repos\DataBase_Movie\DataBase_Movie\obj\Debug\DataBase_Movie.FormAdminManageAccount.resources
+C:\Users\dohyun\source\repos\DataBase_Movie\DataBase_Movie\obj\Debug\DataBase_Movie.FormAdminSendEmail.resources

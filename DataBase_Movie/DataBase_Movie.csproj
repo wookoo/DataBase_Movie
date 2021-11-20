@@ -52,6 +52,24 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAdminMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdminMain.Designer.cs">
+      <DependentUpon>FormAdminMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAdminManageAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdminManageAccount.Designer.cs">
+      <DependentUpon>FormAdminManageAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAdminSendEmail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdminSendEmail.Designer.cs">
+      <DependentUpon>FormAdminSendEmail.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormFindAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +98,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdminMain.resx">
+      <DependentUpon>FormAdminMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdminManageAccount.resx">
+      <DependentUpon>FormAdminManageAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdminSendEmail.resx">
+      <DependentUpon>FormAdminSendEmail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormFindAccount.resx">
       <DependentUpon>FormFindAccount.cs</DependentUpon>

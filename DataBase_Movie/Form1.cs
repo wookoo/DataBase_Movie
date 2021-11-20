@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using System.Data.OleDb;
 using System.Security.Cryptography;
 using System.Text.RegularExpressions;
-
+using System.Threading;
 
 namespace DataBase_Movie
 {
@@ -34,6 +34,21 @@ namespace DataBase_Movie
 
         private void loginBTN_Click(object sender, EventArgs e)
         {
+
+
+            Thread t = new Thread(new ThreadStart(() =>
+            {
+
+                FormAdminManageAccount f = new FormAdminManageAccount();
+
+
+                f.ShowDialog();
+            }));
+
+            t.Start();
+            Close();
+
+            
             String email = idTextBox.Text;
             String passwd = passwordTextBox.Text;
 
@@ -93,12 +108,28 @@ namespace DataBase_Movie
             String grade = read.GetString(1);
             conn.Close();
             Console.WriteLine(name + grade);
+            MessageBox.Show($"{name}님 환영합니다.", "로그인성공");
 
+            /*
             if (email == "admin")
             {
                 //여기서 admin 작업 진행
 
-            }
+                
+                Thread t = new Thread(new ThreadStart( ()=>
+                {
+                    
+                    FormAdminMain f = new FormAdminMain();
+
+
+                    f.ShowDialog();
+                }));
+
+                t.Start();
+                Close();
+                return;
+
+            }*/
             
 
 
