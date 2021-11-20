@@ -58,6 +58,12 @@
     <Compile Include="FormAdminEditGrade.Designer.cs">
       <DependentUpon>FormAdminEditGrade.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAdminEditUserGrade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdminEditUserGrade.Designer.cs">
+      <DependentUpon>FormAdminEditUserGrade.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAdminMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,8 +111,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAdminEditGrade.resx">
-      <DependentUpon>FormAdminEditGrade.cs</DependentUpon>
+    <EmbeddedResource Include="FormAdminEditUserGrade.resx">
+      <DependentUpon>FormAdminEditUserGrade.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAdminMain.resx">
       <DependentUpon>FormAdminMain.cs</DependentUpon>

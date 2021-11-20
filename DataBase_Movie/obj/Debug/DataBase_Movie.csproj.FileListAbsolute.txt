@@ -14,4 +14,4 @@ C:\Users\dohyun\source\repos\DataBase_Movie\DataBase_Movie\obj\Debug\DataBase_Mo
 C:\Users\dohyun\source\repos\DataBase_Movie\DataBase_Movie\obj\Debug\DataBase_Movie.FormAdminMain.resources
 C:\Users\dohyun\source\repos\DataBase_Movie\DataBase_Movie\obj\Debug\DataBase_Movie.FormAdminManageAccount.resources
 C:\Users\dohyun\source\repos\DataBase_Movie\DataBase_Movie\obj\Debug\DataBase_Movie.FormAdminSendEmail.resources
-C:\Users\dohyun\source\repos\DataBase_Movie\DataBase_Movie\obj\Debug\DataBase_Movie.FormAdminEditGrade.resources
+C:\Users\dohyun\source\repos\DataBase_Movie\DataBase_Movie\obj\Debug\DataBase_Movie.FormAdminEditUserGrade.resources

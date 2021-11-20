@@ -22,5 +22,11 @@ namespace DataBase_Movie
             FormAdminManageAccount f = new FormAdminManageAccount();
             f.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormAdminEditGrade f = new FormAdminEditGrade();
+            f.ShowDialog();
+        }
     }
 }

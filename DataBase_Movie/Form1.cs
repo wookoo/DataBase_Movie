@@ -39,7 +39,7 @@ namespace DataBase_Movie
             Thread t = new Thread(new ThreadStart(() =>
             {
 
-                FormAdminManageAccount f = new FormAdminManageAccount();
+                FormAdminMain f = new FormAdminMain();
 
 
                 f.ShowDialog();

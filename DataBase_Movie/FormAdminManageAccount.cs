@@ -136,7 +136,7 @@ namespace DataBase_Movie
                 {
                     Console.WriteLine((String)EmailList[i]);
                 }
-                FormAdminEditGrade f = new FormAdminEditGrade(EmailList,GradeList);
+                FormAdminEditUserGrade f = new FormAdminEditUserGrade(EmailList,GradeList);
                 f.ShowDialog();
 
                 GridViewRefresh();
