@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 using System.Data.OleDb;
 using System.Security.Cryptography;
+using System.Text.RegularExpressions;
 
 
 namespace DataBase_Movie
@@ -39,7 +40,19 @@ namespace DataBase_Movie
             email = email.Trim();
 
 
-            Console.WriteLine("로그인 버튼 눌림" + id + "djawnstlr");
+            Console.WriteLine("로그인 버튼 눌림" + email + "djawnstlr");
+
+ 
+            bool valid = Regex.IsMatch(email, @"[a-zA-Z0-9!#$%&'*+/s=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?");
+            if(email == "admin")
+            {
+                valid = true;
+            }
+            if (!valid)
+            {
+                MessageBox.Show("올바른 이메일이 아닙니다. 확인해주세요.", "로그인 실패");
+                return;
+            }
 
             SHA256 hash1 = new SHA256Managed();
             byte[] bytes1 = hash1.ComputeHash(Encoding.ASCII.GetBytes(passwd));
@@ -75,9 +88,11 @@ namespace DataBase_Movie
                 }
                 return;
             }
-            conn.Close();
+            
             String name = read.GetString(0);
             String grade = read.GetString(1);
+            conn.Close();
+            Console.WriteLine(name + grade);
 
             if (email == "admin")
             {
