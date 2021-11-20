@@ -81,9 +81,9 @@ namespace DataBase_Movie
             this.panel1.Controls.Add(this.passwordBox);
             this.panel1.Controls.Add(this.authCodeBox);
             this.panel1.Controls.Add(this.eMailBox);
-            this.panel1.Location = new System.Drawing.Point(220, 61);
+            this.panel1.Location = new System.Drawing.Point(155, 59);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(525, 352);
+            this.panel1.Size = new System.Drawing.Size(447, 352);
             this.panel1.TabIndex = 0;
             // 
             // phoneLastBox
@@ -93,7 +93,6 @@ namespace DataBase_Movie
             this.phoneLastBox.Name = "phoneLastBox";
             this.phoneLastBox.Size = new System.Drawing.Size(57, 21);
             this.phoneLastBox.TabIndex = 24;
-            this.phoneLastBox.KeyPress += this.only_digit_Event;
             // 
             // phoneMiddleBox
             // 
@@ -102,7 +101,6 @@ namespace DataBase_Movie
             this.phoneMiddleBox.Name = "phoneMiddleBox";
             this.phoneMiddleBox.Size = new System.Drawing.Size(57, 21);
             this.phoneMiddleBox.TabIndex = 23;
-            this.phoneMiddleBox.KeyPress += this.only_digit_Event;
             // 
             // phoneDrop
             // 
@@ -123,7 +121,6 @@ namespace DataBase_Movie
             this.phoneDrop.Name = "phoneDrop";
             this.phoneDrop.Size = new System.Drawing.Size(67, 20);
             this.phoneDrop.TabIndex = 22;
-            this.phoneDrop.SelectedIndex = 0;
             this.phoneDrop.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // label7
@@ -143,7 +140,6 @@ namespace DataBase_Movie
             this.CardThirdBox.Name = "CardThirdBox";
             this.CardThirdBox.Size = new System.Drawing.Size(57, 21);
             this.CardThirdBox.TabIndex = 19;
-            this.CardThirdBox.KeyPress += this.only_digit_Event;
             // 
             // CardSecondBox
             // 
@@ -152,7 +148,6 @@ namespace DataBase_Movie
             this.CardSecondBox.Name = "CardSecondBox";
             this.CardSecondBox.Size = new System.Drawing.Size(57, 21);
             this.CardSecondBox.TabIndex = 18;
-            this.CardSecondBox.KeyPress += this.only_digit_Event;
             // 
             // CardFirstBox
             // 
@@ -161,7 +156,6 @@ namespace DataBase_Movie
             this.CardFirstBox.Name = "CardFirstBox";
             this.CardFirstBox.Size = new System.Drawing.Size(57, 21);
             this.CardFirstBox.TabIndex = 17;
-            this.CardFirstBox.KeyPress += this.only_digit_Event;
             // 
             // cardDrop
             // 
@@ -181,7 +175,6 @@ namespace DataBase_Movie
             this.cardDrop.Name = "cardDrop";
             this.cardDrop.Size = new System.Drawing.Size(67, 20);
             this.cardDrop.TabIndex = 16;
-            this.cardDrop.SelectedIndex = 0;
             this.cardDrop.SelectedIndexChanged += new System.EventHandler(this.cardDrop_SelectedIndexChanged);
             // 
             // cancelBtn
@@ -222,7 +215,6 @@ namespace DataBase_Movie
             this.CardFourthBox.Size = new System.Drawing.Size(57, 21);
             this.CardFourthBox.TabIndex = 12;
             this.CardFourthBox.TextChanged += new System.EventHandler(this.cardBox_TextChanged);
-            this.CardFourthBox.KeyPress += this.only_digit_Event;
             // 
             // label5
             // 
@@ -269,7 +261,7 @@ namespace DataBase_Movie
             this.label1.Location = new System.Drawing.Point(63, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 12);
-            this.label1.TabIndex = 6;
+            this.label1.TabIndex = 5;
             this.label1.Text = "이메일";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
@@ -278,7 +270,7 @@ namespace DataBase_Movie
             this.send_auth_mail.Location = new System.Drawing.Point(265, 59);
             this.send_auth_mail.Name = "send_auth_mail";
             this.send_auth_mail.Size = new System.Drawing.Size(91, 21);
-            this.send_auth_mail.TabIndex = 5;
+            this.send_auth_mail.TabIndex = 2;
             this.send_auth_mail.Text = "인증번호 전송";
             this.send_auth_mail.UseVisualStyleBackColor = true;
             this.send_auth_mail.Click += new System.EventHandler(this.send_auth_btn_Click);
@@ -307,7 +299,7 @@ namespace DataBase_Movie
             this.passwordBox.Name = "passwordBox";
             this.passwordBox.PasswordChar = '*';
             this.passwordBox.Size = new System.Drawing.Size(246, 21);
-            this.passwordBox.TabIndex = 2;
+            this.passwordBox.TabIndex = 99;
             // 
             // authCodeBox
             // 
@@ -319,7 +311,6 @@ namespace DataBase_Movie
             this.authCodeBox.ReadOnly = true;
             this.authCodeBox.Size = new System.Drawing.Size(149, 21);
             this.authCodeBox.TabIndex = 11;
-            this.authCodeBox.KeyPress += this.only_digit_Event;
             // 
             // eMailBox
             // 

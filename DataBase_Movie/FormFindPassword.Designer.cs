@@ -68,6 +68,7 @@ namespace DataBase_Movie
             this.resetBtn.TabIndex = 14;
             this.resetBtn.Text = "비밀번호 변경";
             this.resetBtn.UseVisualStyleBackColor = true;
+            this.resetBtn.Click += new System.EventHandler(this.resetBtn_Click);
             // 
             // label4
             // 
@@ -114,6 +115,7 @@ namespace DataBase_Movie
             this.send_auth_mail.TabIndex = 5;
             this.send_auth_mail.Text = "인증번호 전송";
             this.send_auth_mail.UseVisualStyleBackColor = true;
+            this.send_auth_mail.Click += new System.EventHandler(this.send_auth_btn_Click);
             // 
             // rePasswordBox
             // 

@@ -24,6 +24,15 @@ namespace DataBase_Movie
         public FormRegister()
         {
             InitializeComponent();
+            this.authCodeBox.KeyPress += this.only_digit_Event;
+            this.CardFirstBox.KeyPress += this.only_digit_Event;
+            this.CardFourthBox.KeyPress += this.only_digit_Event;
+            this.CardSecondBox.KeyPress += this.only_digit_Event;
+            this.CardThirdBox.KeyPress += this.only_digit_Event;
+            this.phoneLastBox.KeyPress += this.only_digit_Event;
+            this.phoneMiddleBox.KeyPress += this.only_digit_Event;
+            this.phoneDrop.SelectedIndex = 0;
+            this.cardDrop.SelectedIndex = 0;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -90,14 +99,10 @@ namespace DataBase_Movie
                     }
                     return;
                 }
-                try
-                {
+              
                     conn.Close(); //데이터베이스 연결 해제
-                }
-                catch
-                {
-
-                }
+                
+          
               
                 //try
                // {

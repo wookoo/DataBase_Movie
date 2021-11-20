@@ -8,10 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using System.Data.OleDb;
+using System.Security.Cryptography;
+
+
 namespace DataBase_Movie
 {
     public partial class Form1 : Form
     {
+        OleDbConnection conn;
+        string connectionString = "Provider=MSDAORA;Password=dohyun;User ID=dohyun"; //oracle 서버 연결
+
         public Form1()
         {
             InitializeComponent();
@@ -26,12 +33,67 @@ namespace DataBase_Movie
 
         private void loginBTN_Click(object sender, EventArgs e)
         {
-            String id = idTextBox.Text;
+            String email = idTextBox.Text;
             String passwd = passwordTextBox.Text;
-            id = id.Trim();
+
+            email = email.Trim();
 
 
             Console.WriteLine("로그인 버튼 눌림" + id + "djawnstlr");
+
+            SHA256 hash1 = new SHA256Managed();
+            byte[] bytes1 = hash1.ComputeHash(Encoding.ASCII.GetBytes(passwd));
+
+            // 16진수 형태로 문자열 결합
+            StringBuilder sb1 = new StringBuilder();
+            foreach (byte b1 in bytes1)
+                sb1.AppendFormat("{0:x2}", b1);
+
+            // 입력값의 해시결과
+            String crypted_pw = sb1.ToString();
+            Console.WriteLine(crypted_pw);
+            //admin passwd 8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918
+
+            String query = $"select 이름,등급 from 회원 where 아이디='{email}' and 비밀번호='{crypted_pw}'";
+
+            conn = new OleDbConnection(connectionString);
+            conn.Open();
+            OleDbCommand cmd = new OleDbCommand();
+
+            cmd.CommandText = query;
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = conn;
+
+            OleDbDataReader read = cmd.ExecuteReader();
+
+            if (!read.Read())
+            {
+                MessageBox.Show("가입 정보가 없습니다.", "로그인실패");
+                if(conn != null)
+                {
+                    conn.Close();
+                }
+                return;
+            }
+            conn.Close();
+            String name = read.GetString(0);
+            String grade = read.GetString(1);
+
+            if (email == "admin")
+            {
+                //여기서 admin 작업 진행
+
+            }
+            
+
+
+
+            
+            
+
+
+
+
         }
         private void registerBTN_Click(object sender, EventArgs e)
         {
