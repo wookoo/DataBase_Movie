@@ -143,5 +143,10 @@ namespace DataBase_Movie
 
             }
         }
+
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

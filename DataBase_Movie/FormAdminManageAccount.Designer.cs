@@ -46,6 +46,7 @@ namespace DataBase_Movie
             this.dataGridView.RowTemplate.Height = 23;
             this.dataGridView.Size = new System.Drawing.Size(572, 361);
             this.dataGridView.TabIndex = 0;
+            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
             // button1
             // 
@@ -63,7 +64,7 @@ namespace DataBase_Movie
             this.changeGradeBtn.Name = "changeGradeBtn";
             this.changeGradeBtn.Size = new System.Drawing.Size(107, 78);
             this.changeGradeBtn.TabIndex = 2;
-            this.changeGradeBtn.Text = "등급수정";
+            this.changeGradeBtn.Text = "등급변경";
             this.changeGradeBtn.UseVisualStyleBackColor = true;
             this.changeGradeBtn.Click += new System.EventHandler(this.changeGradeBtn_Click);
             // 
