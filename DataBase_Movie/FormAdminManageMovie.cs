@@ -66,6 +66,58 @@ namespace DataBase_Movie
             actor.Text = "";
             director.Text = "";
             pictureBox1.Image = null;
+            conn.Close();
+
+
+           
+            try
+            {
+                String id = (String)dataGridView1.Rows[0].Cells[0].Value;
+                Console.WriteLine(id);
+                conn = new OleDbConnection(connectionString);
+                conn.Open(); //데이터베이스 연결
+                cmd.CommandText = "select * from 영화 where 영화번호 = '" + id + "'";
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection = conn;
+
+                read = cmd.ExecuteReader(); //select  결과
+
+                if (read.Read())
+                {
+                    title.Text = read.GetValue(1).ToString();
+                    director.Text = read.GetValue(2).ToString();
+                    actor.Text = read.GetValue(3).ToString();
+                    time.Text = read.GetValue(5).ToString() + "분";
+
+                    if (read.GetValue(4).ToString() != "")  //이미지가 없으면
+                    {
+                        image = ByteArrayToImage((byte[])read.GetValue(4));
+                        Image.GetThumbnailImageAbort callback = new Image.GetThumbnailImageAbort(ThumbnailCallback);
+                        thumnail_img = image.GetThumbnailImage(400, 400, callback, new IntPtr()); //썸네일 만들기
+                        pictureBox1.Image = thumnail_img;
+                        pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                    }
+                    else
+                    {
+                        pictureBox1.Image = null;
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show("Error: " + ex.Message); //에러 메세지 
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    conn.Close(); //데이터베이스 연결 해제
+                }
+            }
+
+
+
         }
 
 
