@@ -58,6 +58,12 @@
     <Compile Include="FormAdminAddEditMovie.Designer.cs">
       <DependentUpon>FormAdminAddEditMovie.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAdminAddEditSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdminAddEditSchedule.Designer.cs">
+      <DependentUpon>FormAdminAddEditSchedule.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAdminEditAddGrade.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,12 @@
     </Compile>
     <Compile Include="FormAdminManageMovie.Designer.cs">
       <DependentUpon>FormAdminManageMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAdminManageSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdminManageSchedule.Designer.cs">
+      <DependentUpon>FormAdminManageSchedule.cs</DependentUpon>
     </Compile>
     <Compile Include="FormAdminSendEmail.cs">
       <SubType>Form</SubType>
@@ -132,6 +144,9 @@
     <EmbeddedResource Include="FormAdminAddEditMovie.resx">
       <DependentUpon>FormAdminAddEditMovie.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAdminAddEditSchedule.resx">
+      <DependentUpon>FormAdminAddEditSchedule.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAdminEditAddGrade.resx">
       <DependentUpon>FormAdminEditAddGrade.cs</DependentUpon>
     </EmbeddedResource>
@@ -149,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAdminManageMovie.resx">
       <DependentUpon>FormAdminManageMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdminManageSchedule.resx">
+      <DependentUpon>FormAdminManageSchedule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAdminSendEmail.resx">
       <DependentUpon>FormAdminSendEmail.cs</DependentUpon>

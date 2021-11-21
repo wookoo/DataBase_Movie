@@ -34,5 +34,11 @@ namespace DataBase_Movie
             FormAdminManageMovie f = new FormAdminManageMovie();
             f.ShowDialog();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            FormAdminManageSchedule f = new FormAdminManageSchedule();
+            f.ShowDialog();
+        }
     }
 }

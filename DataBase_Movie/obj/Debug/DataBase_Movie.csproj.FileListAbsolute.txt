@@ -19,3 +19,5 @@ C:\Users\dohyun\source\repos\DataBase_Movie\DataBase_Movie\obj\Debug\DataBase_Mo
 C:\Users\dohyun\source\repos\DataBase_Movie\DataBase_Movie\obj\Debug\DataBase_Movie.FormAdminEditAddGrade.resources
 C:\Users\dohyun\source\repos\DataBase_Movie\DataBase_Movie\obj\Debug\DataBase_Movie.FormAdminManageMovie.resources
 C:\Users\dohyun\source\repos\DataBase_Movie\DataBase_Movie\obj\Debug\DataBase_Movie.FormAdminAddEditMovie.resources
+C:\Users\dohyun\source\repos\DataBase_Movie\DataBase_Movie\obj\Debug\DataBase_Movie.FormAdminManageSchedule.resources
+C:\Users\dohyun\source\repos\DataBase_Movie\DataBase_Movie\obj\Debug\DataBase_Movie.FormAdminAddEditSchedule.resources
