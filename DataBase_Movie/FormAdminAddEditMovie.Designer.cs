@@ -31,7 +31,6 @@ namespace DataBase_Movie
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.titleBox = new System.Windows.Forms.TextBox();
             this.directorBox = new System.Windows.Forms.TextBox();
             this.actorBox = new System.Windows.Forms.TextBox();
@@ -56,56 +55,46 @@ namespace DataBase_Movie
             this.panel1.Controls.Add(this.actorBox);
             this.panel1.Controls.Add(this.directorBox);
             this.panel1.Controls.Add(this.titleBox);
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(23, 24);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(303, 372);
+            this.panel1.Size = new System.Drawing.Size(303, 494);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(31, 17);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(172, 195);
+            this.pictureBox1.Size = new System.Drawing.Size(239, 286);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(191, 174);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 24);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "이미지 불러오기";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // titleBox
             // 
-            this.titleBox.Location = new System.Drawing.Point(79, 214);
+            this.titleBox.Location = new System.Drawing.Point(79, 331);
             this.titleBox.Name = "titleBox";
             this.titleBox.Size = new System.Drawing.Size(213, 21);
             this.titleBox.TabIndex = 2;
             // 
             // directorBox
             // 
-            this.directorBox.Location = new System.Drawing.Point(79, 241);
+            this.directorBox.Location = new System.Drawing.Point(79, 358);
             this.directorBox.Name = "directorBox";
             this.directorBox.Size = new System.Drawing.Size(213, 21);
             this.directorBox.TabIndex = 3;
             // 
             // actorBox
             // 
-            this.actorBox.Location = new System.Drawing.Point(79, 268);
+            this.actorBox.Location = new System.Drawing.Point(79, 385);
             this.actorBox.Name = "actorBox";
             this.actorBox.Size = new System.Drawing.Size(213, 21);
             this.actorBox.TabIndex = 4;
             // 
             // timeBox
             // 
-            this.timeBox.Location = new System.Drawing.Point(79, 295);
+            this.timeBox.Location = new System.Drawing.Point(79, 412);
             this.timeBox.Name = "timeBox";
             this.timeBox.Size = new System.Drawing.Size(213, 21);
             this.timeBox.TabIndex = 5;
@@ -113,7 +102,7 @@ namespace DataBase_Movie
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 217);
+            this.label1.Location = new System.Drawing.Point(13, 334);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 12);
             this.label1.TabIndex = 6;
@@ -123,7 +112,7 @@ namespace DataBase_Movie
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 244);
+            this.label2.Location = new System.Drawing.Point(13, 361);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 12);
             this.label2.TabIndex = 7;
@@ -132,7 +121,7 @@ namespace DataBase_Movie
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 271);
+            this.label3.Location = new System.Drawing.Point(13, 388);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 12);
             this.label3.TabIndex = 8;
@@ -141,7 +130,7 @@ namespace DataBase_Movie
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 298);
+            this.label4.Location = new System.Drawing.Point(13, 415);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 12);
             this.label4.TabIndex = 9;
@@ -149,7 +138,7 @@ namespace DataBase_Movie
             // 
             // saveBtn
             // 
-            this.saveBtn.Location = new System.Drawing.Point(15, 334);
+            this.saveBtn.Location = new System.Drawing.Point(15, 451);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(277, 23);
             this.saveBtn.TabIndex = 10;
@@ -161,7 +150,7 @@ namespace DataBase_Movie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(347, 417);
+            this.ClientSize = new System.Drawing.Size(349, 538);
             this.Controls.Add(this.panel1);
             this.Name = "FormAdminAddEditMovie";
             this.Text = "FormAdminAddEditMovie";
@@ -180,7 +169,6 @@ namespace DataBase_Movie
         private System.Windows.Forms.TextBox actorBox;
         private System.Windows.Forms.TextBox directorBox;
         private System.Windows.Forms.TextBox titleBox;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.Label label4;

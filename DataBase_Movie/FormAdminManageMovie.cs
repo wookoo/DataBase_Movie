@@ -59,6 +59,13 @@ namespace DataBase_Movie
 
                 dataGridView1.Rows.Add(obj); //데이터그리드뷰에 오브젝트 배열 추가
             }
+
+            thumnail_img = null;
+            time.Text = "";
+            title.Text = "";
+            actor.Text = "";
+            director.Text = "";
+            pictureBox1.Image = null;
         }
 
 

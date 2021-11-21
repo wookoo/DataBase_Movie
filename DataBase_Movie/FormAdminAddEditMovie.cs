@@ -90,22 +90,7 @@ namespace DataBase_Movie
 
         private void button1_Click(object sender, EventArgs e)
         {
-            OpenFileDialog dialog = new OpenFileDialog();
-            dialog.InitialDirectory = @"C:\Users\user\Pictures";
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-                string image_file = string.Empty;
-                image_file = dialog.FileName;
-            
-                Image image = Bitmap.FromFile(image_file);
-                Image.GetThumbnailImageAbort callback = new Image.GetThumbnailImageAbort(ThumbnailCallback);//썸네일 만들기
-                thumnail_img = null;
-                thumnail_img = image.GetThumbnailImage(400, 400, callback, new IntPtr()); //썸네일 만들기
-                pictureBox1.Image = thumnail_img;
-                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-
-            }
-            else return;
+           
 
         }
         private bool ThumbnailCallback()
@@ -127,6 +112,10 @@ namespace DataBase_Movie
        
             conn.Open(); //데이터베이스 연결
             OleDbCommand cmd = new OleDbCommand();
+            if (MessageBox.Show("정말로 저장 할까요?", "저장 안내", MessageBoxButtons.YesNo) != DialogResult.Yes)
+            {
+                return;
+            }
             if (!isEdit)
             {
                 if (thumnail_img == null)
@@ -174,6 +163,14 @@ namespace DataBase_Movie
                 cmd.ExecuteNonQuery(); //쿼리문을 실행하고 영향받는 행의 수를 반환.
                 cmd.Parameters.Clear();
                 conn.Close();
+                MessageBox.Show("성공적으로 저장되었습니다", "영화추가 성공");
+                titleBox.Text = "";
+                this.thumnail_img = null;
+                actorBox.Text = "";
+                directorBox.Text = "";
+                timeBox.Text = "";
+                pictureBox1.Image = null;
+
             }
             else
             {
@@ -207,9 +204,36 @@ namespace DataBase_Movie
                 cmd.ExecuteNonQuery(); //쿼리문을 실행하고 영향받는 행의 수를 반환.
                 cmd.Parameters.Clear();
                 conn.Close();
+                MessageBox.Show("성공적으로 수정되었습니다", "영화추가 성공");
 
             }
               
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if(thumnail_img != null)
+            {
+                pictureBox1.Image = null;
+                thumnail_img = null;
+                return;
+            }
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.InitialDirectory = @"C:\Users\user\Pictures";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                string image_file = string.Empty;
+                image_file = dialog.FileName;
+
+                Image image = Bitmap.FromFile(image_file);
+                Image.GetThumbnailImageAbort callback = new Image.GetThumbnailImageAbort(ThumbnailCallback);//썸네일 만들기
+                thumnail_img = null;
+                thumnail_img = image.GetThumbnailImage(400, 400, callback, new IntPtr()); //썸네일 만들기
+                pictureBox1.Image = thumnail_img;
+                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            }
+            else return;
         }
     }
 }
