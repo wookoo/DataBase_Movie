@@ -125,6 +125,10 @@ namespace DataBase_Movie
                         pictureBox1.Image = thumnail_img;
                         pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
                     }
+                    else
+                    {
+                        pictureBox1.Image = null;
+                    }
                 }
 
             }
@@ -218,6 +222,53 @@ namespace DataBase_Movie
         private void time_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormAdminAddEditMovie f = new FormAdminAddEditMovie();
+            f.ShowDialog();
+            GridViewRefresh();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int selectedCellCount =
+       dataGridView1.GetCellCount(DataGridViewElementStates.Selected);
+            if (selectedCellCount == 0)
+            {
+                MessageBox.Show("수정할 대상을 선택해주세요", "수정 불가");
+                return;
+            }
+            if (selectedCellCount > 0)
+            {
+
+                int row = dataGridView1.SelectedCells[0].RowIndex;
+
+                for (int i = 0; i < selectedCellCount; i++)
+                {
+
+
+                    if (row != dataGridView1.SelectedCells[i].RowIndex)
+                    {
+                        MessageBox.Show("한번에 한개만 수정 가능합니다.", "수정 불가");
+                        return;
+                    }
+
+
+                }
+                String id = dataGridView1.Rows[row].Cells[0].Value.ToString();
+                String name = dataGridView1.Rows[row].Cells[1].Value.ToString();
+                FormAdminAddEditMovie f = new FormAdminAddEditMovie(id);
+                f.ShowDialog();
+                GridViewRefresh();
+
+            }            
         }
     }
 }

@@ -52,6 +52,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAdminAddEditMovie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdminAddEditMovie.Designer.cs">
+      <DependentUpon>FormAdminAddEditMovie.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAdminEditAddGrade.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdminAddEditMovie.resx">
+      <DependentUpon>FormAdminAddEditMovie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAdminEditAddGrade.resx">
       <DependentUpon>FormAdminEditAddGrade.cs</DependentUpon>

@@ -86,6 +86,7 @@ namespace DataBase_Movie
             this.button2.TabIndex = 11;
             this.button2.Text = "영화수정";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -95,6 +96,7 @@ namespace DataBase_Movie
             this.button1.TabIndex = 10;
             this.button1.Text = "영화등록";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // time
             // 
@@ -188,6 +190,7 @@ namespace DataBase_Movie
             this.dataGridView1.Size = new System.Drawing.Size(360, 303);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // FormAdminManageMovie
             // 

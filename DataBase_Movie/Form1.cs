@@ -34,19 +34,23 @@ namespace DataBase_Movie
 
         private void loginBTN_Click(object sender, EventArgs e)
         {
-
-
+            this.Hide();
+            FormAdminMain f = new FormAdminMain();
+            f.Closed += (s, args) => this.Close();
+            f.ShowDialog();
+            /*
             Thread t = new Thread(new ThreadStart(() =>
             {
 
-                FormAdminMain f = new FormAdminMain();
+                
 
 
-                f.ShowDialog();
+                
             }));
 
             t.Start();
-            Close();
+            Close();*/
+            return;
 
             
             String email = idTextBox.Text;
