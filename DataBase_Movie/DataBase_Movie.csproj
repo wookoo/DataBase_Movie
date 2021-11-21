@@ -52,6 +52,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAdminEditAddGrade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdminEditAddGrade.Designer.cs">
+      <DependentUpon>FormAdminEditAddGrade.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAdminEditGrade.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdminEditAddGrade.resx">
+      <DependentUpon>FormAdminEditAddGrade.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAdminEditGrade.resx">
       <DependentUpon>FormAdminEditGrade.cs</DependentUpon>

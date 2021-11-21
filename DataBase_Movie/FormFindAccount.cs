@@ -99,5 +99,10 @@ namespace DataBase_Movie
                 Close();
             }
         }
+
+        private void phoneMiddleBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
