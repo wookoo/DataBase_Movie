@@ -78,6 +78,7 @@ namespace DataBase_Movie
             this.Controls.Add(this.dataGridView);
             this.Name = "FormAdminManageAccount";
             this.Text = "FormAdminManageAccount";
+            this.Load += new System.EventHandler(this.FormAdminManageAccount_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
 

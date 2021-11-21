@@ -51,7 +51,7 @@ namespace DataBase_Movie
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(135, 95);
             this.button2.TabIndex = 1;
-            this.button2.Text = "등급 추가/수정";
+            this.button2.Text = "등급 관리";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -61,7 +61,7 @@ namespace DataBase_Movie
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(122, 93);
             this.button3.TabIndex = 2;
-            this.button3.Text = "영화등록";
+            this.button3.Text = "영화 관리";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -71,7 +71,7 @@ namespace DataBase_Movie
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(122, 93);
             this.button4.TabIndex = 3;
-            this.button4.Text = "상영스케줄 수정";
+            this.button4.Text = "상영스케줄 관리";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // FormAdminMain

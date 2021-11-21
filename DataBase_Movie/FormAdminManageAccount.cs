@@ -148,5 +148,10 @@ namespace DataBase_Movie
         {
 
         }
+
+        private void FormAdminManageAccount_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

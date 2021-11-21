@@ -82,6 +82,12 @@
     <Compile Include="FormAdminManageAccount.Designer.cs">
       <DependentUpon>FormAdminManageAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAdminManageMovie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdminManageMovie.Designer.cs">
+      <DependentUpon>FormAdminManageMovie.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAdminSendEmail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAdminManageAccount.resx">
       <DependentUpon>FormAdminManageAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdminManageMovie.resx">
+      <DependentUpon>FormAdminManageMovie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAdminSendEmail.resx">
       <DependentUpon>FormAdminSendEmail.cs</DependentUpon>
