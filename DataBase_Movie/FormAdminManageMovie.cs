@@ -155,6 +155,10 @@ namespace DataBase_Movie
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             Console.WriteLine(e.RowIndex);
+            if(e.RowIndex == -1)
+            {
+                return;
+            }
 
             String id = (String)dataGridView1.Rows[e.RowIndex].Cells[0].Value;
             Console.WriteLine(id);
