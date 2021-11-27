@@ -30,6 +30,11 @@ namespace DataBase_Movie
             this.id = id;
             InitializeComponent();
 
+            titleBox.ReadOnly = true;
+            directorBox.ReadOnly = true;
+            actorBox.ReadOnly = true;
+            timeBox.ReadOnly = true;
+
             conn = new OleDbConnection(connectionString);
             try
             {
@@ -160,16 +165,30 @@ namespace DataBase_Movie
                 }
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = conn;
-                cmd.ExecuteNonQuery(); //쿼리문을 실행하고 영향받는 행의 수를 반환.
-                cmd.Parameters.Clear();
-                conn.Close();
-                MessageBox.Show("성공적으로 저장되었습니다", "영화추가 성공");
-                titleBox.Text = "";
-                this.thumnail_img = null;
-                actorBox.Text = "";
-                directorBox.Text = "";
-                timeBox.Text = "";
-                pictureBox1.Image = null;
+                try
+                {
+                    int r = Int32.Parse(timeBox.Text);
+                    if (r <= 0)
+                    {
+                        throw new Exception();
+                    }
+                    cmd.ExecuteNonQuery(); //쿼리문을 실행하고 영향받는 행의 수를 반환.
+                    cmd.Parameters.Clear();
+                    conn.Close();
+                    MessageBox.Show("성공적으로 저장되었습니다", "영화추가 성공");
+                    titleBox.Text = "";
+                    this.thumnail_img = null;
+                    actorBox.Text = "";
+                    directorBox.Text = "";
+                    timeBox.Text = "";
+                    pictureBox1.Image = null;
+
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("입력을 확인해주세요");
+                }
+                
 
             }
             else
@@ -201,10 +220,25 @@ namespace DataBase_Movie
                 }
                 cmd.CommandType = CommandType.Text;
                 cmd.Connection = conn;
-                cmd.ExecuteNonQuery(); //쿼리문을 실행하고 영향받는 행의 수를 반환.
-                cmd.Parameters.Clear();
-                conn.Close();
-                MessageBox.Show("성공적으로 수정되었습니다", "영화추가 성공");
+                try
+                {
+                    int r = Int32.Parse(timeBox.Text);
+                    if(r <= 0)
+                    {
+                        throw new Exception();
+                    }
+                    cmd.ExecuteNonQuery(); //쿼리문을 실행하고 영향받는 행의 수를 반환.
+                    cmd.Parameters.Clear();
+                    conn.Close();
+                    MessageBox.Show("성공적으로 수정되었습니다", "영화추가 성공");
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("시간은 숫자 및 양수만 가능합니다");
+                }
+
+                
 
             }
               

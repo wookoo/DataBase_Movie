@@ -34,7 +34,7 @@ namespace DataBase_Movie
             conn = new OleDbConnection(connectionString);
             conn.Open();
             OleDbCommand cmd = new OleDbCommand();
-            String query = "select 영화번호,영화제목,상영시간 from 영화";
+            String query = "select 영화번호 as 번호,영화제목 as 제목,상영시간 from 영화 order by 번호";
             cmd.CommandText = query;
             cmd.CommandType = CommandType.Text;
             cmd.Connection = conn;
