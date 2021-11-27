@@ -30,13 +30,10 @@ namespace DataBase_Movie
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.emailBox = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.discount = new System.Windows.Forms.Label();
+            this.pride = new System.Windows.Forms.Label();
             this.phoneLastBox = new System.Windows.Forms.TextBox();
             this.phoneMiddleBox = new System.Windows.Forms.TextBox();
             this.phoneDrop = new System.Windows.Forms.ComboBox();
@@ -46,10 +43,13 @@ namespace DataBase_Movie
             this.cardDrop = new System.Windows.Forms.ComboBox();
             this.CardFourthBox = new System.Windows.Forms.TextBox();
             this.nameBox = new System.Windows.Forms.TextBox();
-            this.pride = new System.Windows.Forms.Label();
-            this.discount = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.emailBox = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,68 +80,43 @@ namespace DataBase_Movie
             this.panel1.Size = new System.Drawing.Size(446, 278);
             this.panel1.TabIndex = 0;
             // 
-            // label1
+            // button2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(36, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 12);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "아이디";
+            this.button2.Location = new System.Drawing.Point(91, 243);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(327, 23);
+            this.button2.TabIndex = 37;
+            this.button2.Text = "회원탈퇴";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // label2
+            // button1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(48, 64);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 12);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "이름";
+            this.button1.Location = new System.Drawing.Point(91, 214);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(327, 23);
+            this.button1.TabIndex = 36;
+            this.button1.Text = "수정하기";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label3
+            // discount
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 94);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 12);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "전화번호";
+            this.discount.AutoSize = true;
+            this.discount.Location = new System.Drawing.Point(90, 189);
+            this.discount.Name = "discount";
+            this.discount.Size = new System.Drawing.Size(38, 12);
+            this.discount.TabIndex = 35;
+            this.discount.Text = "label7";
             // 
-            // label4
+            // pride
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 129);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 12);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "카드번호";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(48, 160);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(29, 12);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "등급";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(36, 189);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 12);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "할인율";
-            // 
-            // emailBox
-            // 
-            this.emailBox.AutoSize = true;
-            this.emailBox.Location = new System.Drawing.Point(90, 29);
-            this.emailBox.Name = "emailBox";
-            this.emailBox.Size = new System.Drawing.Size(38, 12);
-            this.emailBox.TabIndex = 9;
-            this.emailBox.Text = "label7";
+            this.pride.AutoSize = true;
+            this.pride.Location = new System.Drawing.Point(90, 160);
+            this.pride.Name = "pride";
+            this.pride.Size = new System.Drawing.Size(38, 12);
+            this.pride.TabIndex = 34;
+            this.pride.Text = "label7";
             // 
             // phoneLastBox
             // 
@@ -238,48 +213,74 @@ namespace DataBase_Movie
             this.nameBox.Size = new System.Drawing.Size(246, 21);
             this.nameBox.TabIndex = 25;
             // 
-            // pride
+            // emailBox
             // 
-            this.pride.AutoSize = true;
-            this.pride.Location = new System.Drawing.Point(90, 160);
-            this.pride.Name = "pride";
-            this.pride.Size = new System.Drawing.Size(38, 12);
-            this.pride.TabIndex = 34;
-            this.pride.Text = "label7";
+            this.emailBox.AutoSize = true;
+            this.emailBox.Location = new System.Drawing.Point(90, 29);
+            this.emailBox.Name = "emailBox";
+            this.emailBox.Size = new System.Drawing.Size(38, 12);
+            this.emailBox.TabIndex = 9;
+            this.emailBox.Text = "label7";
             // 
-            // discount
+            // label6
             // 
-            this.discount.AutoSize = true;
-            this.discount.Location = new System.Drawing.Point(90, 189);
-            this.discount.Name = "discount";
-            this.discount.Size = new System.Drawing.Size(38, 12);
-            this.discount.TabIndex = 35;
-            this.discount.Text = "label7";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(36, 189);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(41, 12);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "할인율";
             // 
-            // button1
+            // label5
             // 
-            this.button1.Location = new System.Drawing.Point(91, 214);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(327, 23);
-            this.button1.TabIndex = 36;
-            this.button1.Text = "수정하기";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(48, 160);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(29, 12);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "등급";
             // 
-            // button2
+            // label4
             // 
-            this.button2.Location = new System.Drawing.Point(91, 243);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(327, 23);
-            this.button2.TabIndex = 37;
-            this.button2.Text = "회원탈퇴";
-            this.button2.UseVisualStyleBackColor = true;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(24, 129);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 12);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "카드번호";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(24, 94);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 12);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "전화번호";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(48, 64);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 12);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "이름";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(36, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 12);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "아이디";
             // 
             // FormUserProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(527, 364);
             this.Controls.Add(this.panel1);
             this.Name = "FormUserProfile";
             this.Text = "FormUserProfile";

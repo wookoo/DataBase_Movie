@@ -289,7 +289,7 @@ namespace DataBase_Movie
                     return;
                 }
 
-                card = cardDrop.Text.Trim() +" " + card;
+                card = cardDrop.Text.Trim() +"-" + card;
 
           
 

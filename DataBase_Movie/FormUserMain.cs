@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.OleDb;
 
 namespace DataBase_Movie
 {
     public partial class FormUserMain : Form
     {
         String email;
+  
         public FormUserMain(String email)
         {
             this.email = email;
@@ -27,7 +29,7 @@ namespace DataBase_Movie
 
         private void button3_Click(object sender, EventArgs e)
         {
-            FormUserProfile f = new FormUserProfile(String email);
+            FormUserProfile f = new FormUserProfile(email);
 
             f.ShowDialog();
         }
