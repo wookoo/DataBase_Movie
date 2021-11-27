@@ -35,9 +35,12 @@ namespace DataBase_Movie
         private void loginBTN_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormUserMain f = new FormUserMain("test2@ruu.kr");
-            f.Closed += (s, args) => this.Close();
-            f.ShowDialog();
+
+            FormUserMain r = new FormUserMain("test2@ruu.kr");
+            r.Closed += (s, args) => this.Close();
+            r.ShowDialog();
+            return;
+
             /*
             Thread t = new Thread(new ThreadStart(() =>
             {
@@ -50,9 +53,9 @@ namespace DataBase_Movie
 
             t.Start();
             Close();*/
-            return;
 
-            
+
+
             String email = idTextBox.Text;
             String passwd = passwordTextBox.Text;
 
@@ -114,26 +117,24 @@ namespace DataBase_Movie
             Console.WriteLine(name + grade);
             MessageBox.Show($"{name}님 환영합니다.", "로그인성공");
 
-            /*
+            
             if (email == "admin")
             {
                 //여기서 admin 작업 진행
 
-                
-                Thread t = new Thread(new ThreadStart( ()=>
-                {
-                    
-                    FormAdminMain f = new FormAdminMain();
 
-
-                    f.ShowDialog();
-                }));
-
-                t.Start();
-                Close();
+                FormAdminMain f = new FormAdminMain();
+                f.Closed += (s, args) => this.Close();
+                f.ShowDialog();
                 return;
 
-            }*/
+            }
+            else
+            {
+                FormUserMain f = new FormUserMain(email);
+                f.Closed += (s, args) => this.Close();
+                f.ShowDialog();
+            }
             
 
 

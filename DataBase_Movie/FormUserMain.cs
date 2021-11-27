@@ -33,5 +33,11 @@ namespace DataBase_Movie
 
             f.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormReservationHistory f = new FormReservationHistory(email);
+            f.ShowDialog();
+        }
     }
 }
