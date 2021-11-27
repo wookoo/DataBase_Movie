@@ -12,9 +12,24 @@ namespace DataBase_Movie
 {
     public partial class FormUserMain : Form
     {
-        public FormUserMain()
+        String email;
+        public FormUserMain(String email)
         {
+            this.email = email;
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormUserReservation f = new FormUserReservation();
+            f.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FormUserProfile f = new FormUserProfile(String email);
+
+            f.ShowDialog();
         }
     }
 }

@@ -35,7 +35,7 @@ namespace DataBase_Movie
         private void loginBTN_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormAdminMain f = new FormAdminMain();
+            FormUserMain f = new FormUserMain("test2@ruu.kr");
             f.Closed += (s, args) => this.Close();
             f.ShowDialog();
             /*
