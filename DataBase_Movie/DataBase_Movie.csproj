@@ -130,12 +130,6 @@
     <Compile Include="FormFindPassword.Designer.cs">
       <DependentUpon>FormFindPassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormFirstHallChoice.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormFirstHallChoice.Designer.cs">
-      <DependentUpon>FormFirstHallChoice.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormPayment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,9 +209,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormFindPassword.resx">
       <DependentUpon>FormFindPassword.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormFirstHallChoice.resx">
-      <DependentUpon>FormFirstHallChoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPayment.resx">
       <DependentUpon>FormPayment.cs</DependentUpon>

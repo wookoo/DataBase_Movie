@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using System.Threading;
 
 namespace DataBase_Movie
 {
@@ -24,6 +25,7 @@ namespace DataBase_Movie
         private void button1_Click(object sender, EventArgs e)
         {
             FormUserReservation f = new FormUserReservation(email);
+            Thread.Sleep(1000);
             f.ShowDialog();
         }
 
