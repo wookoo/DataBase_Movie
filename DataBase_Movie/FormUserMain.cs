@@ -23,7 +23,7 @@ namespace DataBase_Movie
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FormUserReservation f = new FormUserReservation();
+            FormUserReservation f = new FormUserReservation(email);
             f.ShowDialog();
         }
 

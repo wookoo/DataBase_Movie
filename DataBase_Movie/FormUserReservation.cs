@@ -18,12 +18,13 @@ namespace DataBase_Movie
         string connectionString = "Provider=OraOLEDB.Oracle;Password=dohyun;User ID=dohyun"; //oracle 서버 연결
         // BLOB 를 다루기 위해서는 반드시 Provider=OraOLEDB.Oracle 
         Image image = null;
-  
 
-        public FormUserReservation()
+        String email;
+        public FormUserReservation(String email)
         {
             InitializeComponent();
             GridViewRefresh();
+            this.email = email;
         }
         private Image ByteArrayToImage(byte[] bytes)
         {
@@ -166,11 +167,14 @@ namespace DataBase_Movie
 
                     dataGridView2.Rows.Add(obj); //데이터그리드뷰에 오브젝트 배열 추가
                 }
+                String idr = (String)dataGridView2.Rows[0].Cells[0].Value;
                 String type = (String)dataGridView2.Rows[0].Cells[1].Value;
                 start = (String)dataGridView2.Rows[0].Cells[2].Value.ToString();
                 String end = (String)dataGridView2.Rows[0].Cells[3].Value.ToString();
                 String price = (String)dataGridView2.Rows[0].Cells[4].Value.ToString();
 
+               
+                idBox.Text = idr;
                 typeBox.Text = type;
                 startBox.Text = start;
                 endBox.Text = end;
@@ -291,6 +295,8 @@ namespace DataBase_Movie
                 start = (String)dataGridView2.Rows[0].Cells[2].Value.ToString();
                 String end = (String)dataGridView2.Rows[0].Cells[3].Value.ToString();
                 String price = (String)dataGridView2.Rows[0].Cells[4].Value.ToString();
+                String idr = (String)dataGridView2.Rows[0].Cells[0].Value;
+                idBox.Text = idr;
 
                 typeBox.Text = type;
                 startBox.Text = start;
@@ -335,11 +341,19 @@ namespace DataBase_Movie
             String end = (String)dataGridView2.Rows[e.RowIndex].Cells[3].Value.ToString();
             String price = (String)dataGridView2.Rows[e.RowIndex].Cells[4].Value.ToString();
 
+            String idr = (String)dataGridView2.Rows[0].Cells[0].Value;
+            idBox.Text = idr;
             typeBox.Text = type;
             startBox.Text = start;
             endBox.Text = end;
             priceBox.Text = price;
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            FormChoiceSeat f = new FormChoiceSeat(email,idBox.Text);
+            f.ShowDialog();
         }
     }
 

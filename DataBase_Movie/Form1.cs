@@ -37,6 +37,7 @@ namespace DataBase_Movie
             this.Hide();
 
             FormUserMain r = new FormUserMain("test2@ruu.kr");
+            //FormChoiceSeat r = new FormChoiceSeat();
             r.Closed += (s, args) => this.Close();
             r.ShowDialog();
             return;

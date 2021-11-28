@@ -112,6 +112,12 @@
     <Compile Include="FormAdminSendEmail.Designer.cs">
       <DependentUpon>FormAdminSendEmail.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormChoiceSeat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChoiceSeat.Designer.cs">
+      <DependentUpon>FormChoiceSeat.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormFindAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,18 @@
     </Compile>
     <Compile Include="FormFindPassword.Designer.cs">
       <DependentUpon>FormFindPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormFirstHallChoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFirstHallChoice.Designer.cs">
+      <DependentUpon>FormFirstHallChoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPayment.Designer.cs">
+      <DependentUpon>FormPayment.cs</DependentUpon>
     </Compile>
     <Compile Include="FormRegister.cs">
       <SubType>Form</SubType>
@@ -189,11 +207,20 @@
     <EmbeddedResource Include="FormAdminSendEmail.resx">
       <DependentUpon>FormAdminSendEmail.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormChoiceSeat.resx">
+      <DependentUpon>FormChoiceSeat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormFindAccount.resx">
       <DependentUpon>FormFindAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormFindPassword.resx">
       <DependentUpon>FormFindPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFirstHallChoice.resx">
+      <DependentUpon>FormFirstHallChoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPayment.resx">
+      <DependentUpon>FormPayment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormRegister.resx">
       <DependentUpon>FormRegister.cs</DependentUpon>

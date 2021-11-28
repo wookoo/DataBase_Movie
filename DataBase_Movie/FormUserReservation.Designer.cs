@@ -30,6 +30,7 @@ namespace DataBase_Movie
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.endBox = new System.Windows.Forms.Label();
             this.startBox = new System.Windows.Forms.Label();
             this.priceBox = new System.Windows.Forms.Label();
@@ -49,7 +50,8 @@ namespace DataBase_Movie
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.idBox = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -58,6 +60,8 @@ namespace DataBase_Movie
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.idBox);
+            this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.endBox);
             this.panel1.Controls.Add(this.startBox);
@@ -82,6 +86,16 @@ namespace DataBase_Movie
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1017, 477);
             this.panel1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(808, 418);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(206, 59);
+            this.button1.TabIndex = 40;
+            this.button1.Text = "좌석 선택하기";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // endBox
             // 
@@ -261,14 +275,23 @@ namespace DataBase_Movie
             this.label8.TabIndex = 24;
             this.label8.Text = "상영시간";
             // 
-            // button1
+            // label9
             // 
-            this.button1.Location = new System.Drawing.Point(808, 418);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(206, 59);
-            this.button1.TabIndex = 40;
-            this.button1.Text = "좌석 선택하기";
-            this.button1.UseVisualStyleBackColor = true;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(806, 403);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(29, 12);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "번호";
+            // 
+            // idBox
+            // 
+            this.idBox.AutoSize = true;
+            this.idBox.Location = new System.Drawing.Point(874, 403);
+            this.idBox.Name = "idBox";
+            this.idBox.Size = new System.Drawing.Size(44, 12);
+            this.idBox.TabIndex = 41;
+            this.idBox.Text = "label12";
             // 
             // FormUserReservation
             // 
@@ -310,5 +333,7 @@ namespace DataBase_Movie
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label idBox;
     }
 }

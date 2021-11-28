@@ -25,3 +25,6 @@ C:\Users\dohyun\source\repos\DataBase_Movie\DataBase_Movie\obj\Debug\DataBase_Mo
 C:\Users\dohyun\source\repos\DataBase_Movie\DataBase_Movie\obj\Debug\DataBase_Movie.FormUserReservation.resources
 C:\Users\dohyun\source\repos\DataBase_Movie\DataBase_Movie\obj\Debug\DataBase_Movie.FormUserProfile.resources
 C:\Users\dohyun\source\repos\DataBase_Movie\DataBase_Movie\obj\Debug\DataBase_Movie.FormReservationHistory.resources
+C:\Users\dohyun\source\repos\DataBase_Movie\DataBase_Movie\obj\Debug\DataBase_Movie.FormChoiceSeat.resources
+C:\Users\dohyun\source\repos\DataBase_Movie\DataBase_Movie\obj\Debug\DataBase_Movie.FormFirstHallChoice.resources
+C:\Users\dohyun\source\repos\DataBase_Movie\DataBase_Movie\obj\Debug\DataBase_Movie.FormPayment.resources
