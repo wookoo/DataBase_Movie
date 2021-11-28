@@ -135,10 +135,56 @@ namespace DataBase_Movie
                     }
                 }
 
+
+                dataGridView2.DataSource = null;
+                dataGridView2.Rows.Clear();
+                conn.Close();
+                conn.Open();
+
+                cmd.CommandText = $"select c.상영번호 as 번호, r.상영관형태 as 형태, c.상영시작시간 as 시작, c.상영종료시간 as 종료 ,c.요금 from 상영관 r ,(select 상영번호,상영관번호,상영시작시간,상영종료시간,요금 from 상영스케줄 where 영화번호 ='{id}' and 상영시작시간 > {start}) c where c.상영관번호 in r.상영관번호";
+                read = cmd.ExecuteReader();
+
+
+
+                count = read.FieldCount;
+                dataGridView2.ColumnCount = count;
+                for (int i = 0; i < count; i++)
+                {
+                    dataGridView2.Columns[i].Name = read.GetName(i);
+                }
+                while (read.Read())
+                {
+
+                    object[] obj = new object[count]; // 필드수만큼 오브젝트 배열
+                    for (int i = 0; i < count; i++) // 필드 수만큼 반복
+                    {
+
+                        obj[i] = new object();
+                        obj[i] = read.GetValue(i);
+                    }
+
+
+                    dataGridView2.Rows.Add(obj); //데이터그리드뷰에 오브젝트 배열 추가
+                }
+                String type = (String)dataGridView2.Rows[0].Cells[1].Value;
+                start = (String)dataGridView2.Rows[0].Cells[2].Value.ToString();
+                String end = (String)dataGridView2.Rows[0].Cells[3].Value.ToString();
+                String price = (String)dataGridView2.Rows[0].Cells[4].Value.ToString();
+
+                typeBox.Text = type;
+                startBox.Text = start;
+                endBox.Text = end;
+                priceBox.Text = price;
+
+
+
+
+
+
             }
             catch (Exception ex)
             {
-                //MessageBox.Show("Error: " + ex.Message); //에러 메세지 
+                MessageBox.Show("Error: " + ex.Message); //에러 메세지 
             }
             finally
             {
@@ -154,6 +200,10 @@ namespace DataBase_Movie
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if(e.RowIndex == -1)
+            {
+                return;
+            }
             try
             {
                 String id = (String)dataGridView1.Rows[e.RowIndex].Cells[0].Value;
@@ -200,6 +250,58 @@ namespace DataBase_Movie
                     }
                 }
 
+
+                conn.Close();
+                conn.Open();
+                dataGridView2.DataSource = null;
+                dataGridView2.Rows.Clear();
+                string st = DateTime.Now.ToString("yyyy-MM-dd-HH-mm");
+
+
+                string start = $"TO_DATE('{st}', 'yyyy-MM-dd-HH24-mi')";
+
+
+                cmd.CommandText = $"select c.상영번호 as 번호, r.상영관형태 as 형태, c.상영시작시간 as 시작, c.상영종료시간 as 종료 ,c.요금 from 상영관 r ,(select 상영번호,상영관번호,상영시작시간,상영종료시간,요금 from 상영스케줄 where 영화번호 ='{id}' and 상영시작시간 > {start} ) c where c.상영관번호 in r.상영관번호";
+                read = cmd.ExecuteReader();
+
+
+        
+                int count = read.FieldCount;
+                dataGridView2.ColumnCount = count;
+                for (int i = 0; i < count; i++)
+                {
+                    dataGridView2.Columns[i].Name = read.GetName(i);
+                }
+                while (read.Read())
+                {
+
+                    object[] obj = new object[count]; // 필드수만큼 오브젝트 배열
+                    for (int i = 0; i < count; i++) // 필드 수만큼 반복
+                    {
+
+                        obj[i] = new object();
+                        obj[i] = read.GetValue(i);
+                    }
+
+
+                    dataGridView2.Rows.Add(obj); //데이터그리드뷰에 오브젝트 배열 추가
+                }
+
+                String type = (String)dataGridView2.Rows[0].Cells[1].Value;
+                start = (String)dataGridView2.Rows[0].Cells[2].Value.ToString();
+                String end = (String)dataGridView2.Rows[0].Cells[3].Value.ToString();
+                String price = (String)dataGridView2.Rows[0].Cells[4].Value.ToString();
+
+                typeBox.Text = type;
+                startBox.Text = start;
+                endBox.Text = end;
+                priceBox.Text = price;
+
+
+
+
+
+
             }
             catch (Exception ex)
             {
@@ -212,6 +314,32 @@ namespace DataBase_Movie
                     conn.Close(); //데이터베이스 연결 해제
                 }
             }
+
+
+            //여기서 좌석 선택
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex == -1)
+            {
+                return;
+            }
+            String type = (String)dataGridView2.Rows[e.RowIndex].Cells[1].Value;
+            String start = (String)dataGridView2.Rows[e.RowIndex].Cells[2].Value.ToString();
+            String end = (String)dataGridView2.Rows[e.RowIndex].Cells[3].Value.ToString();
+            String price = (String)dataGridView2.Rows[e.RowIndex].Cells[4].Value.ToString();
+
+            typeBox.Text = type;
+            startBox.Text = start;
+            endBox.Text = end;
+            priceBox.Text = price;
+
         }
     }
 
