@@ -81,7 +81,7 @@ namespace DataBase_Movie
             this.panel1.Controls.Add(this.passwordBox);
             this.panel1.Controls.Add(this.authCodeBox);
             this.panel1.Controls.Add(this.eMailBox);
-            this.panel1.Location = new System.Drawing.Point(155, 59);
+            this.panel1.Location = new System.Drawing.Point(12, 25);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(447, 352);
             this.panel1.TabIndex = 0;
@@ -326,7 +326,7 @@ namespace DataBase_Movie
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CausesValidation = false;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(480, 391);
             this.Controls.Add(this.panel1);
             this.Name = "FormRegister";
             this.Text = "FormRegister";

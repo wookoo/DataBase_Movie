@@ -305,6 +305,7 @@ namespace DataBase_Movie
 
         private void button1_Click(object sender, EventArgs e)
         {
+            this.show_all = !this.show_all;
             if (this.show_all)
             {
                 button1.Text = "전체 보기";
@@ -315,7 +316,7 @@ namespace DataBase_Movie
             }
             GridViewRefresh();
 
-            this.show_all = !this.show_all;
+            
         }
     }
 }

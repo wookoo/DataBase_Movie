@@ -188,7 +188,13 @@ namespace DataBase_Movie
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message); //에러 메세지 
+                //MessageBox.Show("Error: " + ex.Message); //에러 메세지 
+
+                idBox.Text = "";
+                typeBox.Text = "";//type;
+                startBox.Text = "";// start;
+                endBox.Text = "";// end;
+                priceBox.Text = "";// price;
             }
             finally
             {
@@ -341,7 +347,7 @@ namespace DataBase_Movie
             String end = (String)dataGridView2.Rows[e.RowIndex].Cells[3].Value.ToString();
             String price = (String)dataGridView2.Rows[e.RowIndex].Cells[4].Value.ToString();
 
-            String idr = (String)dataGridView2.Rows[0].Cells[0].Value;
+            String idr = (String)dataGridView2.Rows[e.RowIndex].Cells[0].Value;
             idBox.Text = idr;
             typeBox.Text = type;
             startBox.Text = start;

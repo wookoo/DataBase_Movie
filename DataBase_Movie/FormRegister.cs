@@ -134,8 +134,8 @@ namespace DataBase_Movie
                 string[] MAIL_SENDER_IDPW = textValue.Split('/');
                 string MAIL_SENDER_ID = MAIL_SENDER_IDPW[0].Trim();
                 string MAIL_SENDER_PW = MAIL_SENDER_IDPW[1].Trim();
-                Console.WriteLine(MAIL_SENDER_ID);
-                Console.WriteLine(MAIL_SENDER_PW);
+                ////Console.WriteLine(MAIL_SENDER_ID);
+                ////Console.WriteLine(MAIL_SENDER_PW);
                 smtpServer.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
                 smtpServer.Credentials = new System.Net.NetworkCredential(MAIL_SENDER_ID, MAIL_SENDER_PW);
                 smtpServer.EnableSsl = true;

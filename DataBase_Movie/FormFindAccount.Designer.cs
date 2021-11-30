@@ -51,7 +51,7 @@ namespace DataBase_Movie
             this.panel1.Controls.Add(this.nameBox);
             this.panel1.Controls.Add(this.phoneDrop);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Location = new System.Drawing.Point(217, 127);
+            this.panel1.Location = new System.Drawing.Point(12, 30);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(343, 188);
             this.panel1.TabIndex = 0;
@@ -143,7 +143,7 @@ namespace DataBase_Movie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(372, 247);
             this.Controls.Add(this.panel1);
             this.Name = "FormFindAccount";
             this.Text = "FormFindAccount";

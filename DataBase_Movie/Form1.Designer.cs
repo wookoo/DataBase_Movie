@@ -47,7 +47,7 @@ namespace DataBase_Movie
             this.panel1.Controls.Add(this.loginBtn);
             this.panel1.Controls.Add(this.passwordTextBox);
             this.panel1.Controls.Add(this.idTextBox);
-            this.panel1.Location = new System.Drawing.Point(152, 78);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(497, 303);
             this.panel1.TabIndex = 0;
@@ -111,7 +111,7 @@ namespace DataBase_Movie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(535, 336);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.Text = "Form1";

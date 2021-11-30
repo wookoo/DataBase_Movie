@@ -172,7 +172,7 @@ namespace DataBase_Movie
                     OleDbCommand cmd = new OleDbCommand();
                     cmd.CommandType = CommandType.Text;
                     cmd.CommandText = query;
-                    //cmd.ExecuteNonQuery();
+                    cmd.ExecuteNonQuery();
                     conn.Close();
 
                     MessageBox.Show("회원 탈퇴 되었습니다", "탈퇴완료");

@@ -30,10 +30,10 @@ namespace DataBase_Movie
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.removeBtn = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.removeBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
@@ -44,10 +44,20 @@ namespace DataBase_Movie
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.dataGridView);
-            this.panel1.Location = new System.Drawing.Point(12, 83);
+            this.panel1.Location = new System.Drawing.Point(17, 26);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(320, 248);
             this.panel1.TabIndex = 0;
+            // 
+            // removeBtn
+            // 
+            this.removeBtn.Location = new System.Drawing.Point(225, 88);
+            this.removeBtn.Name = "removeBtn";
+            this.removeBtn.Size = new System.Drawing.Size(92, 70);
+            this.removeBtn.TabIndex = 3;
+            this.removeBtn.Text = "등급삭제";
+            this.removeBtn.UseVisualStyleBackColor = true;
+            this.removeBtn.Click += new System.EventHandler(this.removeBtn_Click);
             // 
             // button2
             // 
@@ -82,21 +92,11 @@ namespace DataBase_Movie
             this.dataGridView.TabIndex = 0;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
-            // removeBtn
-            // 
-            this.removeBtn.Location = new System.Drawing.Point(225, 88);
-            this.removeBtn.Name = "removeBtn";
-            this.removeBtn.Size = new System.Drawing.Size(92, 70);
-            this.removeBtn.TabIndex = 3;
-            this.removeBtn.Text = "등급삭제";
-            this.removeBtn.UseVisualStyleBackColor = true;
-            this.removeBtn.Click += new System.EventHandler(this.removeBtn_Click);
-            // 
             // FormAdminEditGrade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(349, 397);
+            this.ClientSize = new System.Drawing.Size(349, 300);
             this.Controls.Add(this.panel1);
             this.Name = "FormAdminEditGrade";
             this.Text = "FormAdminEditGrade";

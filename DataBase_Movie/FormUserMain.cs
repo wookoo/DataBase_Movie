@@ -16,10 +16,12 @@ namespace DataBase_Movie
     {
         String email;
   
-        public FormUserMain(String email)
+        public FormUserMain(String email, String name)
         {
             this.email = email;
             InitializeComponent();
+
+            label1.Text = $"{name} 님 안녕하세요."; 
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -82,7 +82,7 @@ namespace DataBase_Movie
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(342, 261);
+            this.button4.Location = new System.Drawing.Point(339, 301);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(146, 73);
             this.button4.TabIndex = 35;
@@ -226,7 +226,7 @@ namespace DataBase_Movie
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(166, 261);
+            this.button3.Location = new System.Drawing.Point(163, 301);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(170, 73);
             this.button3.TabIndex = 3;
@@ -236,7 +236,7 @@ namespace DataBase_Movie
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(3, 261);
+            this.button1.Location = new System.Drawing.Point(0, 301);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(157, 73);
             this.button1.TabIndex = 1;
@@ -253,7 +253,7 @@ namespace DataBase_Movie
             this.dataGridView1.Location = new System.Drawing.Point(0, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(488, 252);
+            this.dataGridView1.Size = new System.Drawing.Size(488, 295);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);

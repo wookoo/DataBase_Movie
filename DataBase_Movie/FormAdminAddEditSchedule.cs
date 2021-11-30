@@ -297,14 +297,12 @@ namespace DataBase_Movie
             DateTime startTime = this.dateTimePicker1.Value;
             DateTime endTime = this.dateTimePicker2.Value;
 
-            //if(startTime < DateTime.Now.AddMinutes(30))
-            //{
-             //   MessageBox.Show("영화시작 최소 30분 전에 등록해주세요");
-              //  return;
-            //}
+            if (startTime < DateTime.Now.AddMinutes(30))
+            {
+                MessageBox.Show("영화시작 최소 30분 전에 등록해주세요");
+                return;
 
-            Random generator = new Random();
-            String r = generator.Next(0, 999999).ToString("D6");
+            }
 
             string st = startTime.ToString("yyyy-MM-dd-HH-mm");
             string en = endTime.ToString("yyyy-MM-dd-HH-mm");

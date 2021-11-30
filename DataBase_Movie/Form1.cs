@@ -23,6 +23,8 @@ namespace DataBase_Movie
         public Form1()
         {
             InitializeComponent();
+
+            passwordTextBox.PasswordChar = '*';
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -34,13 +36,7 @@ namespace DataBase_Movie
 
         private void loginBTN_Click(object sender, EventArgs e)
         {
-            this.Hide();
-
-            FormUserMain r = new FormUserMain("test2@ruu.kr");
-            //FormChoiceSeat r = new FormChoiceSeat();
-            r.Closed += (s, args) => this.Close();
-            r.ShowDialog();
-            return;
+            
 
             /*
             Thread t = new Thread(new ThreadStart(() =>
@@ -122,7 +118,7 @@ namespace DataBase_Movie
             if (email == "admin")
             {
                 //여기서 admin 작업 진행
-
+                this.Hide();
 
                 FormAdminMain f = new FormAdminMain();
                 f.Closed += (s, args) => this.Close();
@@ -132,7 +128,11 @@ namespace DataBase_Movie
             }
             else
             {
-                FormUserMain f = new FormUserMain(email);
+
+                this.Hide();
+
+                
+                FormUserMain f = new FormUserMain(email,name);
                 f.Closed += (s, args) => this.Close();
                 f.ShowDialog();
             }

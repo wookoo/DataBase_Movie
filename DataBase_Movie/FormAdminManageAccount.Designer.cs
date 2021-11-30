@@ -41,7 +41,7 @@ namespace DataBase_Movie
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView.Location = new System.Drawing.Point(86, 47);
+            this.dataGridView.Location = new System.Drawing.Point(12, 31);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowTemplate.Height = 23;
             this.dataGridView.Size = new System.Drawing.Size(572, 361);
@@ -50,7 +50,7 @@ namespace DataBase_Movie
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(681, 47);
+            this.button1.Location = new System.Drawing.Point(590, 31);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(107, 76);
             this.button1.TabIndex = 1;
@@ -60,7 +60,7 @@ namespace DataBase_Movie
             // 
             // changeGradeBtn
             // 
-            this.changeGradeBtn.Location = new System.Drawing.Point(681, 151);
+            this.changeGradeBtn.Location = new System.Drawing.Point(590, 125);
             this.changeGradeBtn.Name = "changeGradeBtn";
             this.changeGradeBtn.Size = new System.Drawing.Size(107, 78);
             this.changeGradeBtn.TabIndex = 2;
@@ -72,7 +72,7 @@ namespace DataBase_Movie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(705, 432);
             this.Controls.Add(this.changeGradeBtn);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView);
